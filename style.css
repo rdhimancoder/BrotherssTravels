@@ -1,0 +1,554 @@
+/* ==========================================================================
+   Brotherss Travels - Alpine Expedition & Transit Design System
+   Bootstrap 5 Theme Custom Overrides & Visual Tokens
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Design Tokens & CSS Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand Colors */
+  --bt-primary: #002217;
+  --bt-primary-container: #0f382a;
+  --bt-primary-light: #274e3f;
+  --bt-primary-fixed: #c1ecd7;
+  --bt-on-primary-fixed: #002116;
+  --bt-surface-tint: #3f6656;
+
+  --bt-secondary: #904d00;
+  --bt-secondary-amber: #d97706;
+  --bt-secondary-container: #fe932c;
+  --bt-secondary-fixed: #ffdcc3;
+  --bt-on-secondary-fixed: #2f1500;
+
+  --bt-surface: #f8f9ff;
+  --bt-surface-low: #eff4ff;
+  --bt-surface-container: #e6eeff;
+  --bt-surface-high: #dde9ff;
+  --bt-surface-highest: #d5e3fd;
+  --bt-surface-lowest: #ffffff;
+
+  --bt-on-surface: #0d1c2f;
+  --bt-on-surface-variant: #414844;
+  --bt-outline: #717974;
+  --bt-outline-variant: #c1c8c3;
+
+  --bt-error: #ba1a1a;
+  --bt-error-container: #ffdad6;
+
+  /* Typography */
+  --bt-font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --bt-font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Elevation Shadows */
+  --bt-shadow-sm: 0 1px 3px rgba(15, 56, 42, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --bt-shadow-md: 0 4px 14px -2px rgba(15, 56, 42, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+  --bt-shadow-lg: 0 12px 28px -6px rgba(15, 56, 42, 0.12), 0 4px 10px -2px rgba(15, 56, 42, 0.04);
+  --bt-shadow-xl: 0 20px 38px -8px rgba(15, 56, 42, 0.16);
+
+  /* Border Radii */
+  --bt-radius-sm: 0.375rem;
+  --bt-radius-md: 0.625rem;
+  --bt-radius-lg: 0.875rem;
+  --bt-radius-xl: 1.25rem;
+  --bt-radius-pill: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   Global Resets & Base Styles
+   -------------------------------------------------------------------------- */
+body {
+  font-family: var(--bt-font-body);
+  color: var(--bt-on-surface);
+  background-color: var(--bt-surface);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 70px; /* space for mobile sticky bar on mobile */
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-display {
+  font-family: var(--bt-font-display);
+  font-weight: 700;
+  color: var(--bt-primary);
+  letter-spacing: -0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   Theme Utility Color Classes
+   -------------------------------------------------------------------------- */
+.bg-bt-primary {
+  background-color: var(--bt-primary) !important;
+}
+.bg-bt-primary-container {
+  background-color: var(--bt-primary-container) !important;
+}
+.bg-bt-secondary {
+  background-color: var(--bt-secondary) !important;
+}
+.bg-bt-secondary-amber {
+  background-color: var(--bt-secondary-amber) !important;
+}
+.bg-bt-secondary-container {
+  background-color: var(--bt-secondary-container) !important;
+}
+.bg-bt-surface {
+  background-color: var(--bt-surface) !important;
+}
+.bg-bt-surface-low {
+  background-color: var(--bt-surface-low) !important;
+}
+.bg-bt-surface-container {
+  background-color: var(--bt-surface-container) !important;
+}
+.bg-bt-surface-high {
+  background-color: var(--bt-surface-high) !important;
+}
+.bg-bt-surface-lowest {
+  background-color: var(--bt-surface-lowest) !important;
+}
+.bg-bt-error {
+  background-color: var(--bt-error) !important;
+}
+
+.text-bt-primary {
+  color: var(--bt-primary) !important;
+}
+.text-bt-secondary {
+  color: var(--bt-secondary) !important;
+}
+.text-bt-secondary-amber {
+  color: var(--bt-secondary-amber) !important;
+}
+.text-bt-surface-tint {
+  color: var(--bt-surface-tint) !important;
+}
+.text-bt-muted {
+  color: var(--bt-on-surface-variant) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons & Interactive Elements
+   -------------------------------------------------------------------------- */
+.btn-bt-primary {
+  background-color: var(--bt-primary);
+  color: #ffffff;
+  border: 1px solid transparent;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--bt-radius-md);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-bt-primary:hover,
+.btn-bt-primary:focus {
+  background-color: var(--bt-primary-container);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: var(--bt-shadow-sm);
+}
+
+.btn-bt-secondary {
+  background-color: var(--bt-secondary-amber);
+  color: #ffffff;
+  border: 1px solid transparent;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--bt-radius-md);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-bt-secondary:hover,
+.btn-bt-secondary:focus {
+  background-color: #b45309;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: var(--bt-shadow-md);
+}
+
+.btn-bt-outline {
+  background-color: transparent;
+  color: var(--bt-primary);
+  border: 1.5px solid var(--bt-primary);
+  font-weight: 600;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--bt-radius-md);
+  transition: all 0.2s ease;
+}
+.btn-bt-outline:hover,
+.btn-bt-outline:focus {
+  background-color: rgba(0, 34, 23, 0.05);
+  color: var(--bt-primary);
+}
+
+.btn-bt-light {
+  background-color: var(--bt-surface-container);
+  color: var(--bt-on-surface);
+  border: 1px solid transparent;
+  font-weight: 600;
+  border-radius: var(--bt-radius-md);
+  transition: all 0.2s ease;
+}
+.btn-bt-light:hover {
+  background-color: var(--bt-surface-high);
+  color: var(--bt-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Badges & Micro Chips
+   -------------------------------------------------------------------------- */
+.bt-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--bt-radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.bt-badge-primary {
+  background-color: var(--bt-primary-fixed);
+  color: var(--bt-on-primary-fixed);
+}
+.bt-badge-secondary {
+  background-color: var(--bt-secondary-fixed);
+  color: var(--bt-on-secondary-fixed);
+}
+.bt-badge-dark {
+  background-color: var(--bt-primary-container);
+  color: #ffffff;
+}
+.bt-badge-amber {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+.bt-badge-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* --------------------------------------------------------------------------
+   Navbar Custom Styling
+   -------------------------------------------------------------------------- */
+.bt-navbar {
+  background-color: rgba(248, 249, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(193, 200, 195, 0.35);
+  box-shadow: 0 4px 20px -4px rgba(15, 56, 42, 0.06);
+  transition: all 0.3s ease;
+}
+
+.bt-nav-link {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--bt-on-surface-variant);
+  padding: 0.5rem 0.9rem !important;
+  border-radius: var(--bt-radius-sm);
+  transition: all 0.2s ease;
+  position: relative;
+}
+.bt-nav-link:hover {
+  color: var(--bt-primary);
+}
+.bt-nav-link.active {
+  color: var(--bt-secondary-amber) !important;
+}
+.bt-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 0.9rem;
+  right: 0.9rem;
+  height: 2.5px;
+  background-color: var(--bt-secondary-amber);
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Cards & Layout Components
+   -------------------------------------------------------------------------- */
+.bt-card {
+  background-color: var(--bt-surface-lowest);
+  border-radius: var(--bt-radius-lg);
+  border: 1px solid rgba(193, 200, 195, 0.3);
+  box-shadow: var(--bt-shadow-sm);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  overflow: hidden;
+}
+.bt-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--bt-shadow-md);
+  border-color: rgba(193, 200, 195, 0.6);
+}
+
+.bt-card-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.bt-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.bt-card:hover .bt-card-img-wrap img {
+  transform: scale(1.05);
+}
+
+.bt-img-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 34, 23, 0.85) 0%, rgba(0, 34, 23, 0.2) 60%, transparent 100%);
+}
+
+/* --------------------------------------------------------------------------
+   Filter & Interactive Controls (Tabs, Chips, Radios)
+   -------------------------------------------------------------------------- */
+.bt-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: var(--bt-radius-pill);
+  font-size: 0.84rem;
+  font-weight: 600;
+  background-color: var(--bt-surface-container);
+  color: var(--bt-on-surface);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.bt-filter-chip:hover {
+  background-color: var(--bt-surface-highest);
+}
+.bt-filter-chip.active {
+  background-color: var(--bt-primary);
+  color: #ffffff;
+  box-shadow: var(--bt-shadow-sm);
+}
+
+/* Segmented Control Tabs */
+.bt-segmented-group {
+  display: flex;
+  background-color: var(--bt-surface-low);
+  padding: 0.3rem;
+  border-radius: var(--bt-radius-md);
+  gap: 0.25rem;
+}
+.bt-segmented-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--bt-radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--bt-on-surface-variant);
+  transition: all 0.2s ease;
+}
+.bt-segmented-btn.active {
+  background-color: var(--bt-primary);
+  color: #ffffff;
+  box-shadow: var(--bt-shadow-sm);
+}
+
+/* Style Selector Radio Cards */
+.bt-style-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: var(--bt-radius-md);
+  background-color: var(--bt-surface-low);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.bt-style-card:hover {
+  background-color: var(--bt-surface-container);
+}
+.bt-style-card.active {
+  background-color: var(--bt-primary-container);
+  color: #ffffff;
+  border-color: var(--bt-primary-light);
+  box-shadow: var(--bt-shadow-sm);
+}
+.bt-style-card.active .text-bt-muted,
+.bt-style-card.active p {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+.bt-style-card.active h5,
+.bt-style-card.active h6 {
+  color: #ffffff !important;
+}
+
+/* --------------------------------------------------------------------------
+   Custom Range Sliders
+   -------------------------------------------------------------------------- */
+.bt-range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--bt-surface-highest);
+  outline: none;
+}
+.bt-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bt-secondary-amber);
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: var(--bt-shadow-sm);
+}
+.bt-range-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bt-secondary-amber);
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: var(--bt-shadow-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Pulse Animation for Live Status
+   -------------------------------------------------------------------------- */
+@keyframes bt-pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+.bt-pulse-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--bt-secondary-container);
+  animation: bt-pulse 2s infinite ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   Tariff Table Styling
+   -------------------------------------------------------------------------- */
+.bt-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+.bt-table thead th {
+  background-color: var(--bt-surface-container);
+  color: var(--bt-primary);
+  font-family: var(--bt-font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.9rem 1.25rem;
+  border: none;
+}
+.bt-table tbody td {
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid var(--bt-surface-container);
+  vertical-align: middle;
+}
+.bt-table tbody tr:hover {
+  background-color: rgba(230, 238, 255, 0.45);
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Bottom Navigation Dock
+   -------------------------------------------------------------------------- */
+.bt-mobile-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  background-color: rgba(248, 249, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(193, 200, 195, 0.4);
+  box-shadow: 0 -4px 16px rgba(15, 56, 42, 0.08);
+  padding: 0.4rem 0.5rem;
+}
+.bt-dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--bt-on-surface-variant);
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem;
+  border-radius: var(--bt-radius-sm);
+  transition: all 0.2s ease;
+}
+.bt-dock-item i {
+  font-size: 1.25rem;
+  margin-bottom: 0.15rem;
+}
+.bt-dock-item.active {
+  color: var(--bt-secondary-amber);
+}
+.bt-dock-item.bt-dock-sos {
+  color: var(--bt-error);
+}
+
+/* --------------------------------------------------------------------------
+   Section Views (Single Page Application Switcher)
+   -------------------------------------------------------------------------- */
+.bt-view-section {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.bt-view-section.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Smooth Accordion Focus */
+.accordion-button:not(.collapsed) {
+  color: var(--bt-primary);
+  background-color: var(--bt-surface-low);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+}
+.accordion-button:focus {
+  border-color: var(--bt-surface-tint);
+  box-shadow: 0 0 0 0.2rem rgba(63, 102, 86, 0.15);
+}
+
+/* Hero Mountain Ambient Graphic */
+.bt-hero-ambient {
+  position: relative;
+  background: linear-gradient(135deg, var(--bt-primary) 0%, var(--bt-primary-container) 100%);
+  color: #ffffff;
+  overflow: hidden;
+}
+.bt-hero-ambient::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: radial-gradient(rgba(193, 236, 215, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}

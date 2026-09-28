@@ -1,0 +1,6 @@
+{
+  "name": "Brotherss Travels - Himalayan Expeditions & Mountain Cabs",
+  "description": "Premier Bootstrap 5 Himalayan travel and mountain taxi theme featuring curated tour packages, instant fare calculator, custom itinerary builder, and 24/7 high-altitude assistance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
