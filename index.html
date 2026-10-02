@@ -108,7 +108,7 @@
                 <a class="nav-link bt-nav-link">Tour Packages</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link bt-nav-link">Mountain Taxi</a>
+                <a class="nav-link bt-nav-link" data-target-view="view-taxi">Mountain Taxi</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link bt-nav-link">Custom Itinerary & Contact</a>
@@ -368,126 +368,358 @@
             <span class="small text-uppercase fw-bold text-bt-secondary tracking-wider">Handpicked Mountain Trips</span>
             <h2 class="h3 font-display fw-bold text-bt-primary mb-0">Top Mountain Destinations</h2>
           </div>
-          <a class="text-bt-secondary text-decoration-none fw-bold small d-flex align-items-center gap-1 cursor-pointer">
+          <!-- <a class="text-bt-secondary text-decoration-none fw-bold small d-flex align-items-center gap-1 cursor-pointer">
             <span>View All Packages</span> <i class="bi bi-arrow-right"></i>
-          </a>
+          </a> -->
         </div>
 
-        <div class="row g-4">
-          <!-- Card 1: Spiti Circuit -->
-          <div class="col-12 col-md-6 col-lg-4 apple-reveal">
-            <div class="card bt-card h-100">
-              <div class="bt-card-img-wrap" style="height: 220px;">
-                <img decoding="async" src="https://ik.imagekit.io/yd29mwkn4/images/xh_posts/55500.jpg?tr=w-900,h-600" alt="Spiti Valley Key Monastery">
-                <div class="bt-img-scrim"></div>
-                <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-amber">Best Seller</span>
-                <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.9 (420)</span>
-                <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
-                  <span class="small text-warning text-uppercase fw-bold">Altitude: 4,550m Peak</span>
-                  <h3 class="h5 fw-bold mb-0 text-white">Spiti Valley Circuit (Full Loop)</h3>
-                </div>
-              </div>
-              <div class="card-body p-3 d-flex flex-column justify-content-between">
-                <div>
-                  <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
-                    <span class="fw-bold text-dark">Route:</span> Shimla &rarr; Kaza &rarr; Chandratal &rarr; Manali
-                  </div>
-                  <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
-                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Dedicated 4x4 Heavy SUV with Chauffeur</li>
-                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Boutique Homestays & Riverside Camps</li>
-                    <li><i class="bi bi-check-circle-fill text-success me-1"></i> High-Altitude First Aid & O2 Reserve</li>
-                  </ul>
-                </div>
-                <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
-                  <div>
-                    <span class="small text-muted d-block">Starting from</span>
-                    <span class="h5 fw-bold text-bt-primary mb-0">₹18,500 <small class="fw-normal text-muted fs-6">/person</small></span>
-                  </div>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-bt-light" data-bs-toggle="modal" data-bs-target="#itineraryModalSpiti">Itinerary</button>
-                    <button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Spiti Valley Circuit', 'Off-Road Tour', '₹18,500')">Book</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- Location Selectable Capsules -->
+<div class="d-flex align-items-center gap-2 mb-4 overflow-auto pb-2 bt-capsules-wrapper">
+  <button class="btn btn-sm bt-capsule-btn active" data-location="all">
+    <i class="bi bi-geo-alt-fill me-1"></i>All Destinations
+  </button>
+  <button class="btn btn-sm bt-capsule-btn" data-location="spiti">
+    Spiti Valley
+  </button>
+  <button class="btn btn-sm bt-capsule-btn" data-location="ladakh">
+    Leh Ladakh
+  </button>
+  <button class="btn btn-sm bt-capsule-btn" data-location="himachal">
+    Himachal (Shimla & Manali)
+  </button>
+  <button class="btn btn-sm bt-capsule-btn" data-location="manali">
+    Manali
+  </button>
+</div>
 
-          <!-- Card 2: Leh Ladakh Odyssey -->
-          <div class="col-12 col-md-6 col-lg-4 apple-reveal">
-            <div class="card bt-card h-100">
-              <div class="bt-card-img-wrap" style="height: 220px;">
-                <img decoding="async" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsCLZkVPSEiEnH4dfKwmJzDzOgrfkih8ljR1FpKRncop6KFr11ULX37io&s=10" alt="Leh Ladakh Pangong Tso Lake">
-                <div class="bt-img-scrim"></div>
-                <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-primary">Adventure &bull; Top Rated</span>
-                <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>5.0 (610)</span>
-                <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
-                  <span class="small text-warning text-uppercase fw-bold">5,359m Khardung La Pass</span>
-                  <h3 class="h5 fw-bold mb-0 text-white">Complete Ladakh Odyssey</h3>
-                </div>
-              </div>
-              <div class="card-body p-3 d-flex flex-column justify-content-between">
-                <div>
-                  <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
-                    <span class="fw-bold text-dark">Route:</span> Leh &rarr; Khardung La &rarr; Nubra &rarr; Pangong
-                  </div>
-                  <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
-                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Private 4x4 Mountain Cab with Driver Guide</li>
-                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Inner Line Permits (ILP) Included</li>
-                    <li><i class="bi bi-check-circle-fill text-success me-1"></i> Boutique Stays & Hunder Camel Safari Pass</li>
-                  </ul>
-                </div>
-                <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
-                  <div>
-                    <span class="small text-muted d-block">Starting from</span>
-                    <span class="h5 fw-bold text-bt-primary mb-0">₹24,999 <small class="fw-normal text-muted fs-6">/person</small></span>
-                  </div>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-bt-light" data-bs-toggle="modal" data-bs-target="#itineraryModalLadakh">Itinerary</button>
-                    <button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Complete Ladakh Odyssey', 'Expedition Tour', '₹24,999')">Book</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3: Himachal Paradise -->
-          <div class="col-12 col-md-6 col-lg-4 apple-reveal">
-            <div class="card bt-card h-100">
-              <div class="bt-card-img-wrap" style="height: 220px;">
-                <img decoding="async" src="https://www.divyindiaholidays.in/wp-content/uploads/2025/08/manali-hills-sky-768x432.jpg" alt="Himachal Pine Valley Manali">
-                <div class="bt-img-scrim"></div>
-                <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-secondary">Family Choice</span>
-                <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.9 (512)</span>
-                <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
-                  <span class="small text-warning text-uppercase fw-bold">4-Star Mountain Stays</span>
-                  <h3 class="h5 fw-bold mb-0 text-white">7 Days Himachal Paradise</h3>
-                </div>
-              </div>
-              <div class="card-body p-3 d-flex flex-column justify-content-between">
-                <div>
-                  <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
-                    <span class="fw-bold text-dark">Route:</span> Delhi/Chd &rarr; Shimla &rarr; Kullu &rarr; Manali
-                  </div>
-                  <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
-                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Dedicated Private Innova Crysta Cab</li>
-                    <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Daily Breakfast & Multi-Course Dinner</li>
-                    <li><i class="bi bi-check-circle-fill text-success me-1"></i> Rohtang Pass NGT Permit Covered</li>
-                  </ul>
-                </div>
-                <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
-                  <div>
-                    <span class="small text-muted d-block">Starting from</span>
-                    <span class="h5 fw-bold text-bt-primary mb-0">₹19,999 <small class="fw-normal text-muted fs-6">/person</small></span>
-                  </div>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-bt-light" data-bs-toggle="modal" data-bs-target="#itineraryModalHimachal">Itinerary</button>
-                    <button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('7 Days Himachal Paradise', 'Family Tour', '₹19,999')">Book</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- Card Results Grid -->
+<div class="row g-4" id="cardsGrid">
+  <!-- Card 1: Spiti Circuit -->
+  <div class="col-12 col-md-6 col-lg-4 apple-reveal card-item-col" data-location="spiti">
+    <div class="card bt-card h-100">
+      <div class="bt-card-img-wrap" style="height: 220px;">
+        <img decoding="async" src="https://ik.imagekit.io/yd29mwkn4/images/xh_posts/55500.jpg?tr=w-900,h-600" alt="Spiti Valley Key Monastery">
+        <div class="bt-img-scrim"></div>
+        <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-amber">Best Seller</span>
+        <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.9 (420)</span>
+        <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+          <span class="small text-warning text-uppercase fw-bold">Altitude: 4,550m Peak</span>
+          <h3 class="h5 fw-bold mb-0 text-white">Spiti Valley Circuit (Full Loop)</h3>
         </div>
+      </div>
+      <div class="card-body p-3 d-flex flex-column justify-content-between">
+        <div>
+          <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+            <span class="fw-bold text-dark">Pickup & Drop:</span> Delhi Airport / Railway Station<br>
+            <span class="fw-bold text-dark">Route:</span> Delhi &rarr; Shimla &rarr; Kaza &rarr; Chandratal &rarr; Manali &rarr; Delhi
+          </div>
+          <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Dedicated 4x4 Heavy SUV with Chauffeur</li>
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Boutique Homestays & Riverside Camps</li>
+            <li><i class="bi bi-check-circle-fill text-success me-1"></i> High-Altitude First Aid & O2 Reserve</li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+          <div>
+            <span class="small text-muted d-block">Starting from</span>
+            <span class="h5 fw-bold text-bt-primary mb-0">₹18,500 <small class="fw-normal text-muted fs-6">/person</small></span>
+          </div>
+          <a href="spiti-valley-circuit.html" class="btn btn-sm btn-bt-primary px-3">View Package</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2: Leh Ladakh Odyssey -->
+  <div class="col-12 col-md-6 col-lg-4 apple-reveal card-item-col" data-location="ladakh">
+    <div class="card bt-card h-100">
+      <div class="bt-card-img-wrap" style="height: 220px;">
+        <img decoding="async" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsCLZkVPSEiEnH4dfKwmJzDzOgrfkih8ljR1FpKRncop6KFr11ULX37io&s=10" alt="Leh Ladakh Pangong Tso Lake">
+        <div class="bt-img-scrim"></div>
+        <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-primary">Adventure &bull; Top Rated</span>
+        <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>5.0 (610)</span>
+        <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+          <span class="small text-warning text-uppercase fw-bold">5,359m Khardung La Pass</span>
+          <h3 class="h5 fw-bold mb-0 text-white">Complete Ladakh Odyssey</h3>
+        </div>
+      </div>
+      <div class="card-body p-3 d-flex flex-column justify-content-between">
+        <div>
+          <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+            <span class="fw-bold text-dark">Pickup & Drop:</span> Delhi Airport / Railway Station<br>
+            <span class="fw-bold text-dark">Route:</span> Delhi &rarr; Leh &rarr; Khardung La &rarr; Nubra &rarr; Pangong &rarr; Delhi
+          </div>
+          <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Private 4x4 Mountain Cab with Driver Guide</li>
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Inner Line Permits (ILP) Included</li>
+            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Boutique Stays & Hunder Camel Safari Pass</li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+          <div>
+            <span class="small text-muted d-block">Starting from</span>
+            <span class="h5 fw-bold text-bt-primary mb-0">₹24,999 <small class="fw-normal text-muted fs-6">/person</small></span>
+          </div>
+          <a href="complete-ladakh-odyssey.html" class="btn btn-sm btn-bt-primary px-3">View Package</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3: Himachal Paradise -->
+  <div class="col-12 col-md-6 col-lg-4 apple-reveal card-item-col" data-location="himachal">
+    <div class="card bt-card h-100">
+      <div class="bt-card-img-wrap" style="height: 220px;">
+        <img decoding="async" src="https://www.divyindiaholidays.in/wp-content/uploads/2025/08/manali-hills-sky-768x432.jpg" alt="Himachal Pine Valley Manali">
+        <div class="bt-img-scrim"></div>
+        <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-secondary">Family Choice</span>
+        <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.9 (512)</span>
+        <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+          <span class="small text-warning text-uppercase fw-bold">4-Star Mountain Stays</span>
+          <h3 class="h5 fw-bold mb-0 text-white">7 Days Himachal Paradise</h3>
+        </div>
+      </div>
+      <div class="card-body p-3 d-flex flex-column justify-content-between">
+        <div>
+          <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+            <span class="fw-bold text-dark">Pickup & Drop:</span> Delhi Airport / Railway Station<br>
+            <span class="fw-bold text-dark">Route:</span> Delhi &rarr; Shimla &rarr; Kullu &rarr; Manali &rarr; Delhi
+          </div>
+          <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Dedicated Private Innova Crysta Cab</li>
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Daily Breakfast & Multi-Course Dinner</li>
+            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Rohtang Pass NGT Permit Covered</li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+          <div>
+            <span class="small text-muted d-block">Starting from</span>
+            <span class="h5 fw-bold text-bt-primary mb-0">₹19,999 <small class="fw-normal text-muted fs-6">/person</small></span>
+          </div>
+          <a href="7-days-himachal-paradise.html" class="btn btn-sm btn-bt-primary px-3">View Package</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4: Manali Volvo Getaway (Off-Peak) -->
+  <div class="col-12 col-md-6 col-lg-4 apple-reveal card-item-col" data-location="manali">
+    <div class="card bt-card h-100">
+      <div class="bt-card-img-wrap" style="height: 220px;">
+        <img decoding="async" src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=80" alt="Manali Volvo Package">
+        <div class="bt-img-scrim"></div>
+        <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-amber">Volvo Special</span>
+        <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.8 (340)</span>
+        <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+          <span class="small text-warning text-uppercase fw-bold">Valid till 15th Dec</span>
+          <h3 class="h5 fw-bold mb-0 text-white">Manali Volvo Getaway (5N/6D)</h3>
+        </div>
+      </div>
+      <div class="card-body p-3 d-flex flex-column justify-content-between">
+        <div>
+          <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+            <span class="fw-bold text-dark">Pickup & Drop:</span> Delhi Airport / Railway Station<br>
+            <span class="fw-bold text-dark">Route:</span> Delhi &rarr; Manali &rarr; Solang &rarr; Kullu &rarr; Manikaran &rarr; Delhi
+          </div>
+          <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Return Volvo Bus Tickets for 2</li>
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> 3 Nights Hotel Stay + Daily Breakfast & Dinner</li>
+            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Special Candlelight Dinner & Local Cab Included</li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+          <div>
+            <span class="small text-muted d-block">Starting from</span>
+            <span class="h5 fw-bold text-bt-primary mb-0">₹14,500 <small class="fw-normal text-muted fs-6">/couple</small></span>
+          </div>
+          <a href="manali-volvo-offpeak.html" class="btn btn-sm btn-bt-primary px-3">View Package</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 5: Manali Volvo Peak Season -->
+  <div class="col-12 col-md-6 col-lg-4 apple-reveal card-item-col" data-location="manali">
+    <div class="card bt-card h-100">
+      <div class="bt-card-img-wrap" style="height: 220px;">
+        <img decoding="async" src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" alt="Manali Winter Volvo Special">
+        <div class="bt-img-scrim"></div>
+        <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-primary">Peak Season</span>
+        <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.9 (290)</span>
+        <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+          <span class="small text-warning text-uppercase fw-bold">15th Dec - 3rd Jan</span>
+          <h3 class="h5 fw-bold mb-0 text-white">Manali Volvo Peak Escape (5N/6D)</h3>
+        </div>
+      </div>
+      <div class="card-body p-3 d-flex flex-column justify-content-between">
+        <div>
+          <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+            <span class="fw-bold text-dark">Pickup & Drop:</span> Delhi Airport / Railway Station<br>
+            <span class="fw-bold text-dark">Route:</span> Delhi &rarr; Manali &rarr; Solang &rarr; Kasol &rarr; Manikaran &rarr; Delhi
+          </div>
+          <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Return AC Volvo Bus Transfers</li>
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> 3 Nights Hotel Stay with MAP Plan</li>
+            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Solang Valley, Kasol & Local Sightseeing</li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+          <div>
+            <span class="small text-muted d-block">Starting from</span>
+            <span class="h5 fw-bold text-bt-primary mb-0">₹22,500 <small class="fw-normal text-muted fs-6">/couple</small></span>
+          </div>
+          <a href="manali-volvo-peak.html" class="btn btn-sm btn-bt-primary px-3">View Package</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 6: Manali Volvo Summer Special -->
+  <div class="col-12 col-md-6 col-lg-4 apple-reveal card-item-col" data-location="manali">
+    <div class="card bt-card h-100">
+      <div class="bt-card-img-wrap" style="height: 220px;">
+        <img decoding="async" src="https://images.unsplash.com/photo-1593181629936-11c609b8db9b?auto=format&fit=crop&w=900&q=80" alt="Manali Summer Volvo">
+        <div class="bt-img-scrim"></div>
+        <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-secondary">Summer Special</span>
+        <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.9 (410)</span>
+        <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+          <span class="small text-warning text-uppercase fw-bold">May & June 2027</span>
+          <h3 class="h5 fw-bold mb-0 text-white">Manali Volvo Summer Retreat</h3>
+        </div>
+      </div>
+      <div class="card-body p-3 d-flex flex-column justify-content-between">
+        <div>
+          <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+            <span class="fw-bold text-dark">Pickup & Drop:</span> Delhi Airport / Railway Station<br>
+            <span class="fw-bold text-dark">Route:</span> Delhi &rarr; Manali &rarr; Solang &rarr; Kullu &rarr; Kasol &rarr; Delhi
+          </div>
+          <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Semi-Sleeper AC Volvo Round Trip</li>
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> 3 Nights Accommodation & MAP Meals</li>
+            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Private Sightseeing Cab & Welcome Drinks</li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+          <div>
+            <span class="small text-muted d-block">Starting from</span>
+            <span class="h5 fw-bold text-bt-primary mb-0">₹22,500 <small class="fw-normal text-muted fs-6">/couple</small></span>
+          </div>
+          <a href="manali-volvo-summer.html" class="btn btn-sm btn-bt-primary px-3">View Package</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 7: Shimla Manali Private Cab (Valid till June 30) -->
+  <div class="col-12 col-md-6 col-lg-4 apple-reveal card-item-col" data-location="himachal">
+    <div class="card bt-card h-100">
+      <div class="bt-card-img-wrap" style="height: 220px;">
+        <img decoding="async" src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=900&q=80" alt="Shimla Manali Private Cab">
+        <div class="bt-img-scrim"></div>
+        <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-amber">Honeymoon & Family</span>
+        <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.9 (480)</span>
+        <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+          <span class="small text-warning text-uppercase fw-bold">Valid till 30th June</span>
+          <h3 class="h5 fw-bold mb-0 text-white">Shimla Manali Private Cab (5N/6D)</h3>
+        </div>
+      </div>
+      <div class="card-body p-3 d-flex flex-column justify-content-between">
+        <div>
+          <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+            <span class="fw-bold text-dark">Pickup & Drop:</span> Delhi Airport / Railway Station<br>
+            <span class="fw-bold text-dark">Route:</span> Delhi &rarr; Shimla &rarr; Kufri &rarr; Kullu &rarr; Manali &rarr; Delhi
+          </div>
+          <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Dedicated Swift Dzire Cab Entire Tour</li>
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> 2N Shimla + 3N Manali Stay (5 Breakfasts & 5 Dinners)</li>
+            <li><i class="bi bi-check-circle-fill text-success me-1"></i> All Tolls, Parking & Driver Charges Included</li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+          <div>
+            <span class="small text-muted d-block">Starting from</span>
+            <span class="h5 fw-bold text-bt-primary mb-0">₹35,500 <small class="fw-normal text-muted fs-6">/couple</small></span>
+          </div>
+          <a href="shimla-manali-cab-june.html" class="btn btn-sm btn-bt-primary px-3">View Package</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 8: Shimla Manali Peak Season Private Cab -->
+  <div class="col-12 col-md-6 col-lg-4 apple-reveal card-item-col" data-location="himachal">
+    <div class="card bt-card h-100">
+      <div class="bt-card-img-wrap" style="height: 220px;">
+        <img decoding="async" src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=900&q=80" alt="Shimla Manali Peak Season Cab">
+        <div class="bt-img-scrim"></div>
+        <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-primary">Peak Season Special</span>
+        <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>5.0 (310)</span>
+        <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+          <span class="small text-warning text-uppercase fw-bold">15th Dec - 3rd Jan</span>
+          <h3 class="h5 fw-bold mb-0 text-white">Shimla Manali Peak Cab (5N/6D)</h3>
+        </div>
+      </div>
+      <div class="card-body p-3 d-flex flex-column justify-content-between">
+        <div>
+          <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+            <span class="fw-bold text-dark">Pickup & Drop:</span> Delhi Airport / Railway Station<br>
+            <span class="fw-bold text-dark">Route:</span> Delhi &rarr; Shimla &rarr; Kufri &rarr; Kullu &rarr; Solang &rarr; Manali &rarr; Delhi
+          </div>
+          <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Private Chauffeur-driven Swift Dzire Cab</li>
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> 5 Nights Hotel Accommodation (MAP Plan)</li>
+            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Kufri, Solang & Jogini Waterfall Excursions</li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+          <div>
+            <span class="small text-muted d-block">Starting from</span>
+            <span class="h5 fw-bold text-bt-primary mb-0">₹35,500 <small class="fw-normal text-muted fs-6">/couple</small></span>
+          </div>
+          <a href="shimla-manali-cab-peak.html" class="btn btn-sm btn-bt-primary px-3">View Package</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 9: Shimla Manali Off-Peak Private Cab -->
+  <div class="col-12 col-md-6 col-lg-4 apple-reveal card-item-col" data-location="himachal">
+    <div class="card bt-card h-100">
+      <div class="bt-card-img-wrap" style="height: 220px;">
+        <img decoding="async" src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=80" alt="Shimla Manali Winter Special Cab">
+        <div class="bt-img-scrim"></div>
+        <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-secondary">Best Value</span>
+        <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.9 (390)</span>
+        <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+          <span class="small text-warning text-uppercase fw-bold">3rd Jan - 30th April</span>
+          <h3 class="h5 fw-bold mb-0 text-white">Shimla Manali Winter/Spring Cab</h3>
+        </div>
+      </div>
+      <div class="card-body p-3 d-flex flex-column justify-content-between">
+        <div>
+          <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+            <span class="fw-bold text-dark">Pickup & Drop:</span> Delhi Airport / Railway Station<br>
+            <span class="fw-bold text-dark">Route:</span> Delhi &rarr; Shimla &rarr; Kufri &rarr; Kullu &rarr; Manali &rarr; Delhi
+          </div>
+          <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Private Swift Dzire Vehicle for Complete Tour</li>
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> 5 Nights Premium Stay (2N Shimla + 3N Manali)</li>
+            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Daily Breakfast & Dinner + Full Sightseeing</li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+          <div>
+            <span class="small text-muted d-block">Starting from</span>
+            <span class="h5 fw-bold text-bt-primary mb-0">₹30,500 <small class="fw-normal text-muted fs-6">/couple</small></span>
+          </div>
+          <a href="shimla-manali-cab-jan-apr.html" class="btn btn-sm btn-bt-primary px-3">View Package</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
       </div>
 
       <!-- Fleet Showcase -->
@@ -1080,50 +1312,65 @@
 
         <!-- Tariff Table -->
         <div class="apple-reveal">
-          <h3 class="h4 font-display fw-bold text-bt-primary mb-3">Official Mountain Fleet Tariffs</h3>
-          <div class="table-responsive rounded-3 border">
-            <table class="table bt-table mb-0">
-              <thead>
-                <tr>
-                  <th>Vehicle Model</th>
-                  <th>Capacity</th>
-                  <th>Key Features</th>
-                  <th>Per KM Rate</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="fw-bold text-bt-primary">Toyota Innova Crysta</td>
-                  <td>6 Passengers</td>
-                  <td>Captain Seats, AC, Heavy Incline Power</td>
-                  <td class="fw-bold text-success">₹18 / km</td>
-                  <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Toyota Innova Crysta', 'Taxi Service', '₹18/km')">Book</button></td>
-                </tr>
-                <tr>
-                  <td class="fw-bold text-bt-primary">Mahindra Thar 4WD</td>
-                  <td>4 Passengers</td>
-                  <td>Off-Road 4x4, High Ground Clearance</td>
-                  <td class="fw-bold text-success">₹22 / km</td>
-                  <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Mahindra Thar 4WD', 'Extreme Taxi', '₹22/km')">Book</button></td>
-                </tr>
-                <tr>
-                  <td class="fw-bold text-bt-primary">Force Luxury Urbania</td>
-                  <td>12–16 Passengers</td>
-                  <td>Recliner Pushback, AC, Sound System</td>
-                  <td class="fw-bold text-success">₹28 / km</td>
-                  <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Force Urbania', 'Group Transit', '₹28/km')">Book</button></td>
-                </tr>
-                <tr>
-                  <td class="fw-bold text-bt-primary">Swift Dzire / Etios</td>
-                  <td>4 Passengers</td>
-                  <td>Smooth Highway & Lower Valley Transit</td>
-                  <td class="fw-bold text-success">₹13 / km</td>
-                  <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Swift Dzire/Etios', 'Sedan Taxi', '₹13/km')">Book</button></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+  <h3 class="h4 font-display fw-bold text-bt-primary mb-3">Official Mountain Fleet Tariffs</h3>
+  <div class="table-responsive rounded-3 border">
+    <table class="table bt-table mb-0">
+      <thead>
+        <tr>
+          <th>Vehicle Model</th>
+          <th>Capacity</th>
+          <th>Key Features</th>
+          <th>Per KM Rate</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fw-bold text-bt-primary">Toyota Innova Crysta</td>
+          <td>6 Passengers</td>
+          <td>Captain Seats, AC, Heavy Incline Power</td>
+          <td class="fw-bold text-success">₹18 / km</td>
+          <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Toyota Innova Crysta', 'Taxi Service', '₹18/km')">Book</button></td>
+        </tr>
+        <tr>
+          <td class="fw-bold text-bt-primary">Toyota Fortuner</td>
+          <td>6 Passengers</td>
+          <td>4x4 Capability, High Ground Clearance, Luxury Interior</td>
+          <td class="fw-bold text-success">₹25 / km</td>
+          <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Toyota Fortuner', 'Luxury SUV', '₹25/km')">Book</button></td>
+        </tr>
+        <tr>
+          <td class="fw-bold text-bt-primary">Maruti Suzuki Ertiga</td>
+          <td>6 Passengers</td>
+          <td>Comfortable MUV, AC, Fuel Efficient Hill Transit</td>
+          <td class="fw-bold text-success">₹15 / km</td>
+          <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Maruti Suzuki Ertiga', 'MUV Taxi', '₹15/km')">Book</button></td>
+        </tr>
+        <tr>
+          <td class="fw-bold text-bt-primary">Mahindra Thar 4WD</td>
+          <td>4 Passengers</td>
+          <td>Off-Road 4x4, High Ground Clearance</td>
+          <td class="fw-bold text-success">₹22 / km</td>
+          <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Mahindra Thar 4WD', 'Extreme Taxi', '₹22/km')">Book</button></td>
+        </tr>
+        <tr>
+          <td class="fw-bold text-bt-primary">Force Luxury Urbania</td>
+          <td>12–16 Passengers</td>
+          <td>Recliner Pushback, AC, Sound System</td>
+          <td class="fw-bold text-success">₹28 / km</td>
+          <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Force Urbania', 'Group Transit', '₹28/km')">Book</button></td>
+        </tr>
+        <tr>
+          <td class="fw-bold text-bt-primary">Swift Dzire / Etios</td>
+          <td>4 Passengers</td>
+          <td>Smooth Highway & Lower Valley Transit</td>
+          <td class="fw-bold text-success">₹13 / km</td>
+          <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Swift Dzire/Etios', 'Sedan Taxi', '₹13/km')">Book</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
         </div>
       </div>
     </section>
@@ -1311,7 +1558,7 @@
       <i class="bi bi-search"></i>
       <span>Search</span>
     </a>
-    <a class="bt-dock-item">
+    <a class="bt-dock-item" data-target-view="view-taxi">
       <i class="bi bi-car-front-fill"></i>
       <span>Taxi</span>
     </a>
