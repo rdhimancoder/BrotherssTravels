@@ -1,3 +1,34 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const capsuleBtns = document.querySelectorAll('.bt-capsule-btn');
+  const cardCols = document.querySelectorAll('.card-item-col');
+
+  capsuleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 1. Update active states on buttons
+      capsuleBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const selectedLocation = btn.getAttribute('data-location');
+
+      // 2. Filter cards based on selected location
+      cardCols.forEach(col => {
+        const cardLocation = col.getAttribute('data-location');
+
+        if (selectedLocation === 'all' || cardLocation === selectedLocation) {
+          col.classList.remove('d-none');
+          setTimeout(() => {
+            col.style.opacity = '1';
+            col.style.transform = 'translateY(0)';
+          }, 10);
+        } else {
+          col.style.opacity = '0';
+          col.style.transform = 'translateY(10px)';
+          col.classList.add('d-none');
+        }
+      });
+    });
+  });
+});
 function handleInquirySubmit(event) {
     event.preventDefault();
     
