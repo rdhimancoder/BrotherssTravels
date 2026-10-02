@@ -34,6 +34,53 @@ html {
   opacity: 0.9;
   transform: translateY(-1px);
 }
+/* Scrollable Capsule Bar */
+.bt-capsules-wrapper {
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bt-capsules-wrapper::-webkit-scrollbar {
+  height: 4px;
+}
+
+.bt-capsules-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+/* Capsule Buttons styling */
+.bt-capsule-btn {
+  border-radius: 50rem;
+  padding: 0.4rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  color: #475569;
+  transition: all 0.25s ease-in-out;
+}
+
+.bt-capsule-btn:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.bt-capsule-btn.active {
+  background-color: #002217; /* Theme Primary Color */
+  color: #ffffff;
+  border-color: #002217;
+  box-shadow: 0 2px 8px rgba(0, 34, 23, 0.25);
+}
+
+/* Card Column Hide/Show Transition */
+.card-item-col {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card-item-col.d-none {
+  display: none !important;
+}
 
 /* --------------------------------------------------------------------------
    Design Tokens & CSS Variables
