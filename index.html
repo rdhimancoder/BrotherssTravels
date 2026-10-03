@@ -36,6 +36,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
 
   <!-- Bootstrap 5 CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css'">
@@ -105,13 +108,13 @@
                 <a class="nav-link bt-nav-link active" data-target-view="view-home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link bt-nav-link">Tour Packages</a>
+                <a class="nav-link bt-nav-link">Search (Tour/Taxi)</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link bt-nav-link" data-target-view="view-taxi">Mountain Taxi</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link bt-nav-link">Custom Itinerary & Contact</a>
+                <a class="nav-link bt-nav-link">Contact Us</a>
               </li>
             </ul>
 
@@ -148,7 +151,7 @@
             <i class="bi bi-star-fill text-warning"></i>
             <span>Rated 4.9/5 Across 2,123+ Journeys<!-- • Govt. Approved Himalayan Operator--></span>
           </div>
-          <h1 class="display-4 fw-extrabold font-display text-white mb-3 tracking-tight">
+          <h1 class="display-4 fw-extrabold font-display text-white mb-3 tracking-tight" style="font-family: 'Mea Culpa', cursive;font-weight: 400;font-size: clamp(5.5rem, 6vw, 4.5rem);font-style: normal;">
             Reach mountain peaks <span class="text-warning">safely and comfortably.</span>
           </h1>
           <p class="lead text-white-50 max-w-2xl mx-auto mb-5" style="max-width: 720px;">
@@ -184,7 +187,7 @@
         type="text" 
         id="visitorName" 
         class="form-control bg-light border-0 fw-semibold" 
-        placeholder="e.g. Rahul Sharma" 
+        placeholder="Enter your name here" 
         required 
       />
     </div>
@@ -198,12 +201,11 @@
         type="tel" 
         id="visitorPhone" 
         class="form-control bg-light border-0 fw-semibold" 
-        placeholder="9876543210" 
+        placeholder="Enter a your mobile number" 
         pattern="[0-9]{10}"
         minlength="10"
         maxlength="10"
         oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-        title="Please enter a valid 10-digit mobile number"
         required 
       />
     </div>
@@ -217,24 +219,27 @@
         type="email" 
         id="visitorEmail" 
         class="form-control bg-light border-0 fw-semibold" 
-        placeholder="rahul@example.com" 
+        placeholder="Enter your mail address here" 
         required 
       />
     </div>
 
     <!-- Destination Selection -->
     <div class="col-12 col-md-6 col-lg-6">
-      <label class="form-label small fw-bold text-muted text-uppercase mb-1" for="tourDestination">
-        <i class="bi bi-geo-alt-fill text-bt-secondary me-1"></i> Destination
-      </label>
-      <select id="tourDestination" class="form-select bg-light border-0 fw-semibold">
-        <option value="Spiti Circuit" selected>Spiti High Altitude Circuit</option>
-        <option value="Leh Ladakh">Leh Ladakh & Pangong Tso</option>
-        <option value="Manali & Solang">Manali & Solang Valley</option>
-        <option value="Char Dham Yatra">Kedarnath & Badrinath Yatra</option>
-        <option value="Shimla & Kinnaur">Shimla & Kinnaur Valley</option>
-      </select>
-    </div>
+  <label class="form-label small fw-bold text-muted text-uppercase mb-1" for="tourDestination">
+    <i class="bi bi-geo-alt-fill text-bt-secondary me-1"></i> Destination
+  </label>
+  <select id="tourDestination" class="form-select bg-light border-0 fw-semibold">
+    <option value="" disabled>Select Destination</option>
+    <option value="Spiti Circuit" selected>Spiti Valley Circuit (Full Loop)</option>
+    <option value="Leh Ladakh">Complete Ladakh Odyssey</option>
+    <option value="Himachal Paradise">7 Days Himachal Paradise</option>
+    <option value="Manali Volvo">Manali Volvo Getaway</option>
+    <option value="Shimla Manali Cab">Shimla Manali Private Cab</option>
+    <option value="Char Dham Yatra">Kedarnath & Badrinath Yatra</option>
+    <option value="Shimla & Kinnaur">Shimla & Kinnaur Valley</option>
+  </select>
+</div>
 
     <!-- Message / Notes -->
     <div class="col-12 col-lg-6">
@@ -1499,11 +1504,11 @@
         <div class="col-12 col-md-6 col-lg-3">
           <h5 class="h6 font-display fw-bold text-white text-uppercase tracking-wider mb-3">Popular Mountain Routes</h5>
           <ul class="list-unstyled small text-white-50 d-flex flex-column gap-2 mb-0">
-            <li><a class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>Spiti Valley Tour: Kaza & Chandratal</a></li>
-            <li><a class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>Leh-Ladakh & Khardung La Expedition</a></li>
-            <li><a class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>Kedarnath & Badrinath Yatra</a></li>
-            <li><a class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>Shimla-Manali Scenic Tour</a></li>
-            <li><a class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>Kashmir Great Lakes Alpine Route</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>Spiti Valley Circuit (Full Loop)</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>Complete Ladakh Odyssey</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>7 Days Himachal Paradise</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>Shimla Manali Private Cab</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>Manali Volvo Getaway</a></li>
           </ul>
         </div>
 
@@ -1564,7 +1569,7 @@
     </a>
     <a class="bt-dock-item">
       <i class="bi bi-telephone-fill"></i>
-      <span>Contact</span>
+      <span>Contact Us</span>
     </a>
   </div>
 
