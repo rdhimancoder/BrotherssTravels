@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spiti Valley Circuit (Full Loop) - Itinerary & Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bt-primary: #0f172a;
+      --bt-secondary: #0284c7;
+      --bt-amber: #d97706;
+      --bt-surface-low: #f8fafc;
+      --bt-border: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #334155;
+      background-color: #f8fafc;
+    }
+
+    .font-display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Sticky Header Hidden by default, shown on scroll via JS */
+    .bt-sticky-header {
+      position: fixed;
+      top: 56px; /* Offset for main navbar height */
+      left: 0;
+      right: 0;
+      z-index: 1020;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-100%);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .bt-sticky-header.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .bt-hero {
+      position: relative;
+      background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('https://ik.imagekit.io/yd29mwkn4/images/xh_posts/55500.jpg?tr=w-1600,h-900') center/cover no-repeat;
+      padding: 60px 0;
+      overflow: hidden;
+    }
+
+    .bt-badge {
+      display: inline-block;
+      padding: 0.35em 0.8em;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 50rem;
+    }
+
+    .bt-badge-amber {
+      background-color: #fef3c7;
+      color: #b45309;
+    }
+
+    .bt-badge-primary {
+      background-color: #e0f2fe;
+      color: #0369a1;
+    }
+
+    /* Infinite Horizontal Gallery Slider */
+    .hero-gallery-marquee {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      border-radius: 1rem;
+      padding: 10px 0;
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: infiniteScroll 22s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Increased Image Dimensions & Interactive Hover Styling */
+    .marquee-img {
+      width: 240px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      cursor: pointer;
+      transition: transform 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+    }
+
+    .marquee-img:hover {
+      transform: translateY(-4px) scale(1.03);
+      border-color: #f59e0b;
+      filter: brightness(1.08);
+    }
+
+    @keyframes infiniteScroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Modal Image Lightbox Custom Styling */
+    .modal-img-viewer .modal-content {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .modal-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1056;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .modal-nav-btn:hover {
+      background: rgba(255, 255, 255, 0.4);
+      color: #ffffff;
+    }
+
+    .modal-nav-prev {
+      left: 15px;
+    }
+
+    .modal-nav-next {
+      right: 15px;
+    }
+
+    .bt-card-sticky {
+      position: sticky;
+      top: 130px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 2px solid var(--bt-border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2.5rem;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2.55rem;
+      top: 0.25rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      border-radius: 50%;
+      background-color: var(--bt-secondary);
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 0 2px var(--bt-secondary);
+    }
+
+    .timeline-img {
+      width: 50%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+
+    .bg-bt-surface-low {
+      background-color: var(--bt-surface-low);
+    }
+
+    .btn-bt-primary {
+      background-color: var(--bt-secondary);
+      color: #ffffff;
+      border: none;
+      font-weight: 600;
+    }
+
+    .btn-bt-primary:hover {
+      background-color: #0369a1;
+      color: #ffffff;
+    }
+
+    .text-bt-primary {
+      color: var(--bt-primary);
+    }
+
+    .hover-white:hover {
+      color: #ffffff !important;
+    }
+
+    /* Package Horizontal Slider Styling */
+    .pkg-slider-container {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .pkg-slider-container::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .pkg-slider-container::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 10px;
+    }
+
+    .pkg-slider-container::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 10px;
+    }
+
+    .pkg-slider-card {
+      flex: 0 0 300px;
+      scroll-snap-align: start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .pkg-slider-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .pkg-card-img {
+      height: 180px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-link navbar-brand fw-bold text-white" href="index.html">
+        <i class="bi bi-compass-fill text-warning me-2"></i>Brotherss Travels
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">All Packages</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Spiti Circuit</a></li>
+          <li class="nav-item"><a class="nav-link" href="#booking-form">Book Now</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sticky Top Header Bar -->
+  <div class="bt-sticky-header py-2 text-white" id="scrollStickyHeader">
+    <div class="container d-flex align-items-center justify-content-between flex-wrap gap-2">
+      <a href="index.html" class="btn btn-outline-light btn-sm rounded-pill px-3">
+        <i class="bi bi-arrow-left me-1"></i> Go Back to View All Packages
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <span class="bt-badge bt-badge-amber d-none d-md-inline-block">Best Seller</span>
+        <h2 class="h6 mb-0 fw-bold text-white text-truncate" style="max-width: 400px;">
+          Spiti Valley Circuit (Full Loop)
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Header Section -->
+  <header class="bt-hero text-white mb-5" id="heroHeader">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        
+        <!-- Left Side: Header Content -->
+        <div class="col-lg-6">
+          <div class="mb-3">
+            <a href="index.html" class="btn btn-outline-light btn-sm rounded-pill px-3">
+              <i class="bi bi-arrow-left me-1"></i> Go Back to View All Packages
+            </a>
+          </div>
+          <span class="bt-badge bt-badge-amber mb-2">Best Seller</span>
+          <h1 class="display-4 font-display text-white mb-3 tracking-tight" style="font-family: 'Italianno', cursive; font-weight: 400; font-style: normal; font-size: clamp(3rem, 6.5vw, 5.2rem); line-height: 1.1;">
+            Spiti Valley Circuit <span class="text-warning">(Full Loop)</span>
+          </h1>
+          <p class="lead text-white-50 mb-4">
+            Spiti Valley Circuit (Full Loop) — An exhilarating 9-day high-altitude journey starting and ending with pickup and drop from Delhi Airport or local Railway Station.
+          </p>
+          <div class="d-flex flex-wrap gap-3 text-white-50 small">
+            <div><i class="bi bi-geo-alt-fill text-warning me-1"></i> <strong>Pickup & Drop:</strong> Delhi Airport / Railway Station</div>
+            <div><i class="bi bi-clock-fill text-warning me-1"></i> <strong>Duration:</strong> 8 Nights / 9 Days</div>
+            <div><i class="bi bi-mountains text-warning me-1"></i> <strong>Max Altitude:</strong> 4,550m Peak</div>
+            <div><i class="bi bi-star-fill text-warning me-1"></i> <strong>Rating:</strong> 4.9 (420 Reviews)</div>
+          </div>
+        </div>
+
+        <!-- Right Side: Infinite Horizontal Gallery Slider (Clickable Images) -->
+        <div class="col-lg-6">
+          <div class="hero-gallery-marquee">
+            <div class="marquee-track">
+              <!-- Original 5 Images -->
+              <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80" alt="Snow Peaks View" class="marquee-img" data-index="0">
+              <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80" alt="Mountain Pass Drive" class="marquee-img" data-index="1">
+              <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1200&q=80" alt="Solang Valley Snow Point" class="marquee-img" data-index="2">
+              <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80" alt="Parvati River Kasol" class="marquee-img" data-index="3">
+              <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80" alt="Valley Panoramic Skyline" class="marquee-img" data-index="4">
+              
+              <!-- Cloned Images for Seamless Infinite Loop -->
+              <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80" alt="Snow Peaks View" class="marquee-img" data-index="0">
+              <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80" alt="Mountain Pass Drive" class="marquee-img" data-index="1">
+              <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1200&q=80" alt="Solang Valley Snow Point" class="marquee-img" data-index="2">
+              <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80" alt="Parvati River Kasol" class="marquee-img" data-index="3">
+              <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80" alt="Valley Panoramic Skyline" class="marquee-img" data-index="4">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen Modal Lightbox Gallery -->
+  <div class="modal fade modal-img-viewer" id="galleryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content rounded-4 overflow-hidden position-relative border-0">
+        
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+        <!-- Left / Right Navigation Buttons -->
+        <button class="modal-nav-btn modal-nav-prev" id="prevModalImg" type="button" aria-label="Previous Image">
+          <i class="bi bi-chevron-left fs-4"></i>
+        </button>
+        <button class="modal-nav-btn modal-nav-next" id="nextModalImg" type="button" aria-label="Next Image">
+          <i class="bi bi-chevron-right fs-4"></i>
+        </button>
+
+        <div class="modal-body p-0 text-center position-relative">
+          <img src="" id="modalImageDisplay" class="img-fluid w-100" style="max-height: 82vh; object-fit: contain;" alt="Full Size Gallery View">
+          <div class="p-3 text-white bg-dark bg-opacity-75">
+            <p id="modalCaption" class="mb-0 fw-semibold"></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Layout -->
+  <main class="container pb-5">
+    <div class="row g-4">
+      
+      <!-- Left Column: Itinerary & Highlights -->
+      <div class="col-lg-8">
+        
+        <!-- Package Overview Card -->
+        <div class="card border-0 shadow-sm p-4 mb-4">
+          <h2 class="h4 fw-bold text-dark mb-3"><i class="bi bi-info-circle-fill text-primary me-2"></i>Package Overview</h2>
+          <p class="text-muted mb-3">
+            Himachal is a land of scenic natural splendor, which can make you experiencing a beautiful heaven on earth. Each of its destinations allows you experiencing the nature very closely. Enjoy the natural bliss on your trip to Himachal as this amazingly spectacular state of India offers a memorable vacation to the customers.
+          </p>
+
+          <h3 class="h6 fw-bold text-dark text-uppercase tracking-wider mt-4 mb-3">Basic Details</h3>
+          <div class="table-responsive">
+            <table class="table table-borderless bg-bt-surface-low rounded mb-0">
+              <tbody>
+                <tr>
+                  <th scope="row" class="w-35 text-dark fw-bold">Date of Travel:</th>
+                  <td class="text-muted">Valid till 15th april</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-dark fw-bold">Number of persons:</th>
+                  <td class="text-muted">4 adults</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-dark fw-bold">Number of Rooms:</th>
+                  <td class="text-muted">2 rooms ( Balcony Room )</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-dark fw-bold">Package Type:</th>
+                  <td class="text-muted">Holidays</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-dark fw-bold">Number of nights:</th>
+                  <td class="text-muted">5 Nights 6 Days</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-dark fw-bold">Pick Up:</th>
+                  <td class="text-muted">Delhi /Amritsar/Chandigarh ( as Per Your comfortable )</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-dark fw-bold">Drop:</th>
+                  <td class="text-muted">Delhi/Amritsar/Chandigarh ( as Per Your comfortable )</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="h6 fw-bold text-dark text-uppercase tracking-wider mt-4 mb-3">Hotel Details</h3>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="p-3 border rounded h-100 bg-white shadow-sm">
+                <span class="badge bg-secondary mb-2">Deluxe Hotels</span>
+                <h4 class="h6 fw-bold text-primary mb-1">Package cost: 12,500 Per Couple</h4>
+                <p class="small text-muted mb-0">
+                  <strong>Manali:</strong> hotel Summer villa / hotel royal residency /similar /similar ( Balcony View Room )
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="p-3 border rounded h-100 bg-white shadow-sm border-primary">
+                <span class="badge bg-primary mb-2">3 Star Super Deluxe</span>
+                <h4 class="h6 fw-bold text-primary mb-1">Package cost: 14,500 PER COUPLE</h4>
+                <p class="small text-muted mb-0">
+                  <strong>Manali:</strong> Hotel Hadimba Retreat / Hotel Mountain nest / Hotel Touch sky /similar ( Balcony View Room)
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="p-3 border rounded h-100 bg-white shadow-sm">
+                <span class="badge bg-success mb-2">Luxury Hotels</span>
+                <h4 class="h6 fw-bold text-primary mb-1">Package cost: 16,500 PER COUPLE</h4>
+                <p class="small text-muted mb-0">
+                  <strong>Manali:</strong> Hotel Hill county /Hotel Evoque /similar ( Balcony View Room )
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="p-3 border rounded h-100 bg-white shadow-sm">
+                <span class="badge bg-warning text-dark mb-2">Premium Hotels</span>
+                <h4 class="h6 fw-bold text-primary mb-1">Package cost: 23,500 PER COUPLE</h4>
+                <p class="small text-muted mb-0">
+                  <strong>Manali:</strong> Honeymoon Inn /Hotel Renest river View resort /similar ( Balcony View Room )
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Day-Wise Itinerary (Tour Plan) -->
+        <div class="card border-0 shadow-sm p-4 mb-4">
+          <h2 class="h4 fw-bold text-dark mb-4"><i class="bi bi-map-fill text-primary me-2"></i>Tour Plan</h2>
+          
+          <div class="timeline ms-2">
+            
+            <!-- Day 1 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="h6 fw-bold text-dark mb-1">DAY 01: DELHI/AMRITSAR /CHANDIGARH TO MANALI (BY VOLVO)</h3>
+              <img decoding="async" src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80" alt="Volvo Journey to Manali" class="timeline-img mb-2 shadow-sm d-block mx-auto">
+              <p class="text-muted small mb-0">
+                On Arrival In Delhi catch the Volvo Bus From Delhi Volvo stand ( Majnu Ka Tilla, ISBT, FSK Stadium, RK Ashram Marg Metro Station ) at 5:00 Pm,9:00 ( Chandigarh 11:30 Pm Sec-43 ) and drive for Manali, Overnight Journey in Volvo Bus.
+              </p>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="h6 fw-bold text-dark mb-1">DAY 02: MANALI – LOCAL MANALI SIGHTSEEINGS</h3>
+              <img decoding="async" src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=800&q=80" alt="Local Manali Sightseeing" class="timeline-img mb-2 shadow-sm d-block mx-auto">
+              <p class="text-muted small mb-0">
+                Arrive in Manali, check into your hotel, and refresh. Spend the afternoon discovering key attractions including the ancient Hadimba Devi Temple, Vashisht Hot Springs, Tibetan Monastery, and a relaxed evening walk along Mall Road.
+              </p>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="h6 fw-bold text-dark mb-1">DAY 03: MANALI – SOLANG VALLEY / SNOW POINT</h3>
+              <img decoding="async" src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=800&q=80" alt="Solang Valley Snow Point" class="timeline-img mb-2 shadow-sm d-block mx-auto">
+              <p class="text-muted small mb-0">
+                Embark on an exciting day trip to Solang Valley. Enjoy breathtaking views of snow-capped peaks and indulge in adventure sports like paragliding, zorbing, and ropeway rides before returning to the hotel.
+              </p>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="h6 fw-bold text-dark mb-1">DAY 04: MANALI – KULLU & MANIKARAN AND KASOL SIGHTSEEINGS</h3>
+              <img decoding="async" src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80" alt="Kullu Manikaran Kasol" class="timeline-img mb-2 shadow-sm d-block mx-auto">
+              <p class="text-muted small mb-0">
+                Head out for a scenic excursion across the Parvati Valley. Visit the famous Manikaran Sahib Gurudwara and its natural hot springs, stop by Kasol town, and explore Kullu shawl factories or river rafting spots along the way.
+              </p>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="h6 fw-bold text-dark mb-1">DAY 05: MANALI TO DELHI /AMRITSAR / CHANDIGARH / DEPARTURE</h3>
+              <img decoding="async" src="https://www.divyindiaholidays.in/wp-content/uploads/2025/08/manali-hills-sky-768x432.jpg" alt="Departure from Manali" class="timeline-img mb-2 shadow-sm d-block mx-auto">
+              <p class="text-muted small mb-0">
+                Enjoy a leisurely morning in Manali for last-minute souvenir shopping or café hopping. In the afternoon/evening, board your return AC Volvo bus for an overnight journey back to your origin destination.
+              </p>
+            </div>
+
+            <!-- Day 6 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="h6 fw-bold text-dark mb-1">DAY 06: MORNING DELHI /CHANDIGARH / AMRITSAR ARRIVAL</h3>
+              <img decoding="async" src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80" alt="Arrival Destination" class="timeline-img mb-2 shadow-sm d-block mx-auto">
+              <p class="text-muted small mb-0">
+                Arrive back early in the morning at Delhi, Chandigarh, or Amritsar, marking the end of your memorable mountain trip with sweet memories.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Inclusions & Exclusions -->
+        <div class="card border-0 shadow-sm p-4">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <h3 class="h5 fw-bold text-success mb-3"><i class="bi bi-check-lg me-2"></i>Included</h3>
+              <ul class="list-unstyled small text-muted d-flex flex-column gap-2 mb-0">
+                <li><i class="bi bi-check2 text-success me-1"></i> 03 Nights Accommodation at Hotel</li>
+                <li><i class="bi bi-check2 text-success me-1"></i> 01 Overnight Delhi To Manali by volvo</li>
+                <li><i class="bi bi-check2 text-success me-1"></i> 01 Overnight Manali To Manali by volvo</li>
+                <li><i class="bi bi-check2 text-success me-1"></i> Daily breakfast and dinner at hotel</li>
+                <li><i class="bi bi-check2 text-success me-1"></i> 03 Breakfast and 03 dinner</li>
+                <li><i class="bi bi-check2 text-success me-1"></i> 02 volvo tickets from both side delhi to manali and retrun the same tickets manali to delhi</li>
+                <li><i class="bi bi-check2 text-success me-1"></i> Swift dezire cab for all sightseeing and pick up and drop</li>
+                <li><i class="bi bi-check2 text-success me-1"></i> special Candle Light Dinner</li>
+                <li><i class="bi bi-check2 text-success me-1"></i> Pickup and Drop from Bus Stand to Hotel and Hotel to Bus Stand (Manali)</li>
+                <li><i class="bi bi-check2 text-success me-1"></i> Solang Valley Sightseeing</li>
+                <li><i class="bi bi-check2 text-success me-1"></i> Half Day Local Manali sightseeing tour as Per Given in Itinerary On private basis</li>
+                <li><i class="bi bi-check2 text-success me-1"></i> Kullu ,manikaran ,kasol sightseeing as per given in Itinerary on Private basis</li>
+                <li><i class="bi bi-check2 text-success me-1"></i> All Sightseeing Private Basis as Per Given Itinerary</li>
+                <li><i class="bi bi-check2 text-success me-1"></i> GST all Tax , toll ,parking , driver all includes</li>
+                <li><i class="bi bi-check2 text-success me-1"></i> No Hidden Cost</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h3 class="h5 fw-bold text-danger mb-3"><i class="bi bi-x-lg me-2"></i>Excluded</h3>
+              <ul class="list-unstyled small text-muted d-flex flex-column gap-2 mb-0">
+                <li><i class="bi bi-x text-danger me-1"></i> Extra Meals (Additional food charge) or Drinks & meal supplement for children like:- Milk and cornflakes</li>
+                <li><i class="bi bi-x text-danger me-1"></i> Any sightseeing, which is not mention in Tour Programmer such as water sports, water activities, drinks etc</li>
+                <li><i class="bi bi-x text-danger me-1"></i> Any expenses of personal nature</li>
+                <li><i class="bi bi-x text-danger me-1"></i> Surcharges as applicable</li>
+                <li><i class="bi bi-x text-danger me-1"></i> Anything not mentioned in the inclusions</li>
+                <li><i class="bi bi-x text-danger me-1"></i> Airfare and Train Ticket</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Sticky Booking Widget -->
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm p-4 bt-card-sticky" id="booking-form">
+          <div class="mb-3">
+            <span class="small text-muted d-block">Starting Price</span>
+            <div class="d-flex align-items-baseline gap-2">
+              <span class="h3 fw-bold text-bt-primary mb-0">12,500</span>
+              <span class="text-muted small">Per Couple</span>
+            </div>
+          </div>
+
+          <hr class="my-3">
+
+          <form id="packageBookingForm">
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted text-uppercase mb-1">Pick Up / Drop</label>
+              <input type="text" class="form-control bg-light border-0 fw-semibold" value="Delhi" readonly>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted text-uppercase mb-1" for="travelDate">Select Travel Date</label>
+              <input type="date" class="form-control bg-light border-0 fw-semibold" id="travelDate" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted text-uppercase mb-1" for="numTravelers">No. of Persons</label>
+              <select id="numTravelers" class="form-select bg-light border-0 fw-semibold">
+                <option value="4" selected>4 adults (2 rooms)</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted text-uppercase mb-1" for="custName">Full Name</label>
+              <input type="text" id="custName" class="form-control bg-light border-0" placeholder="Enter your name" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-muted text-uppercase mb-1" for="custPhone">Phone Number</label>
+              <input type="tel" id="custPhone" class="form-control bg-light border-0" placeholder="+91 98765 43210" required>
+            </div>
+
+            <button type="submit" class="btn btn-bt-primary w-100 py-2.5 fw-bold mb-2">
+              <i class="bi bi-send-fill me-1"></i> Send Booking Inquiry
+            </button>
+            <p class="small text-muted text-center mb-0">No instant payment required. Our team will contact you to customize your dates.</p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Related Packages Horizontal Slider Section (Spans Full Main Width) -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="card border-0 shadow-sm p-4">
+          <div class="d-flex align-items-center justify-content-between mb-4">
+            <div>
+              <h2 class="h4 fw-bold text-dark mb-1"><i class="bi bi-grid-fill text-primary me-2"></i>Explore Other Packages</h2>
+              <p class="text-muted small mb-0">Discover more handpicked mountain itineraries for your next adventure</p>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-secondary btn-sm rounded-circle" id="slideLeft" type="button" aria-label="Previous Packages">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="btn btn-outline-secondary btn-sm rounded-circle" id="slideRight" type="button" aria-label="Next Packages">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Horizontal Scroll Container -->
+          <div class="pkg-slider-container" id="pkgSlider">
+            
+            <!-- Card 1 -->
+            <div class="card border border-light-subtle rounded-3 shadow-sm pkg-slider-card overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=600&q=80" class="card-img-top pkg-card-img" alt="Complete Ladakh Odyssey">
+              <div class="card-body p-3">
+                <span class="badge bg-primary mb-2">7 Days / 6 Nights</span>
+                <h3 class="h6 fw-bold text-dark text-truncate mb-2">Complete Ladakh Odyssey</h3>
+                <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-1"></i>Leh, Pangong & Nubra</p>
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top">
+                  <div>
+                    <span class="small text-muted d-block" style="font-size: 0.75rem;">Starting from</span>
+                    <strong class="text-primary">₹24,500</strong>
+                  </div>
+                  <a href="complete-ladakh-odyssey.html" class="btn btn-sm btn-outline-primary fw-semibold">View Plan</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card border border-light-subtle rounded-3 shadow-sm pkg-slider-card overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=600&q=80" class="card-img-top pkg-card-img" alt="7 Days Himachal Paradise">
+              <div class="card-body p-3">
+                <span class="badge bg-success mb-2">7 Days / 6 Nights</span>
+                <h3 class="h6 fw-bold text-dark text-truncate mb-2">7 Days Himachal Paradise</h3>
+                <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-1"></i>Shimla, Manali & Dharamshala</p>
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top">
+                  <div>
+                    <span class="small text-muted d-block" style="font-size: 0.75rem;">Starting from</span>
+                    <strong class="text-primary">₹18,200</strong>
+                  </div>
+                  <a href="7-days-himachal-paradise.html" class="btn btn-sm btn-outline-primary fw-semibold">View Plan</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card border border-light-subtle rounded-3 shadow-sm pkg-slider-card overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80" class="card-img-top pkg-card-img" alt="Shimla Manali Private Cab">
+              <div class="card-body p-3">
+                <span class="badge bg-warning text-dark mb-2">6 Days / 5 Nights</span>
+                <h3 class="h6 fw-bold text-dark text-truncate mb-2">Shimla Manali Private Cab</h3>
+                <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-1"></i>Delhi to Shimla & Manali</p>
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top">
+                  <div>
+                    <span class="small text-muted d-block" style="font-size: 0.75rem;">Starting from</span>
+                    <strong class="text-primary">₹15,900</strong>
+                  </div>
+                  <a href="shimla-manali-cab-june.html" class="btn btn-sm btn-outline-primary fw-semibold">View Plan</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card border border-light-subtle rounded-3 shadow-sm pkg-slider-card overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=600&q=80" class="card-img-top pkg-card-img" alt="Manali Volvo Getaway">
+              <div class="card-body p-3">
+                <span class="badge bg-info text-dark mb-2">5 Days / 4 Nights</span>
+                <h3 class="h6 fw-bold text-dark text-truncate mb-2">Manali Volvo Getaway</h3>
+                <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-1"></i>Manali & Solang Valley</p>
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top">
+                  <div>
+                    <span class="small text-muted d-block" style="font-size: 0.75rem;">Starting from</span>
+                    <strong class="text-primary">₹9,800</strong>
+                  </div>
+                  <a href="manali-volvo-offpeak.html" class="btn btn-sm btn-outline-primary fw-semibold">View Plan</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card border border-light-subtle rounded-3 shadow-sm pkg-slider-card overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=600&q=80" class="card-img-top pkg-card-img" alt="Kasol & Tirthan Valley Retreat">
+              <div class="card-body p-3">
+                <span class="badge bg-secondary mb-2">4 Days / 3 Nights</span>
+                <h3 class="h6 fw-bold text-dark text-truncate mb-2">Kasol & Tirthan Valley Retreat</h3>
+                <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-1"></i>Parvati & Tirthan Valley</p>
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top">
+                  <div>
+                    <span class="small text-muted d-block" style="font-size: 0.75rem;">Starting from</span>
+                    <strong class="text-primary">₹11,400</strong>
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary fw-semibold">View Plan</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Popular Routes Footer Section -->
+  <footer class="bg-dark text-white-50 py-5 mt-5">
+    <div class="container">
+      <div class="row g-4">
+        
+        <!-- About Column -->
+        <div class="col-12 col-md-6 col-lg-5">
+          <h5 class="h6 font-display fw-bold text-white text-uppercase tracking-wider mb-3">Brotherss Travels</h5>
+          <p class="small text-white-50 mb-3">
+            Your premier travel partner for mountain expeditions across Spiti Valley, Leh Ladakh, and Himachal Pradesh. Convenient pickups and drop-offs at Delhi Airport or local Railway Stations for every package.
+          </p>
+        </div>
+
+        <!-- Links Column -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 class="h6 font-display fw-bold text-white text-uppercase tracking-wider mb-3">Popular Mountain Routes</h5>
+          <ul class="list-unstyled small text-white-50 d-flex flex-column gap-2 mb-0">
+            <li><a href="spiti-valley-circuit.html" class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>Spiti Valley Circuit (Full Loop)</a></li>
+            <li><a href="complete-ladakh-odyssey.html" class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>Complete Ladakh Odyssey</a></li>
+            <li><a href="7-days-himachal-paradise.html" class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>7 Days Himachal Paradise</a></li>
+            <li><a href="shimla-manali-cab-june.html" class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>Shimla Manali Private Cab</a></li>
+            <li><a href="manali-volvo-offpeak.html" class="text-white-50 text-decoration-none hover-white"><i class="bi bi-chevron-right text-warning me-1"></i>Manali Volvo Getaway</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5 class="h6 font-display fw-bold text-white text-uppercase tracking-wider mb-3">Pickup & Support</h5>
+          <p class="small text-white-50 mb-1"><i class="bi bi-geo-alt text-warning me-2"></i>Delhi Pickups</p>
+          <p class="small text-white-50 mb-1"><i class="bi bi-telephone text-warning me-2"></i>+91 98765 43210</p>
+          <p class="small text-white-50"><i class="bi bi-envelope text-warning me-2"></i>support@mountainescapes.com</p>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary my-4">
+
+      <div class="text-center small text-white-50">
+        <p class="mb-0">&copy; 2026 Brotherss Travels. All rights reserved. Pickup & drop-off locations: Delhi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 1. Toggle sticky header visibility on scroll
+    window.addEventListener('scroll', function() {
+      const stickyHeader = document.getElementById('scrollStickyHeader');
+      const heroHeader = document.getElementById('heroHeader');
+      
+      const heroBottom = heroHeader.offsetTop + heroHeader.offsetHeight;
+      
+      if (window.scrollY > heroBottom) {
+        stickyHeader.classList.add('visible');
+      } else {
+        stickyHeader.classList.remove('visible');
+      }
+    });
+
+    // 2. Bottom Related Packages horizontal slider controls
+    const slider = document.getElementById('pkgSlider');
+    document.getElementById('slideLeft').addEventListener('click', () => {
+      slider.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+    document.getElementById('slideRight').addEventListener('click', () => {
+      slider.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+
+    // 3. Gallery Lightbox Modal Logic
+    const galleryModal = new bootstrap.Modal(document.getElementById('galleryModal'));
+    const modalImageDisplay = document.getElementById('modalImageDisplay');
+    const modalCaption = document.getElementById('modalCaption');
+    
+    // Gallery dataset
+    const galleryItems = [
+      { src: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80", title: "Snow Peaks View" },
+      { src: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1600&q=80", title: "Mountain Pass Drive" },
+      { src: "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1600&q=80", title: "Solang Valley Snow Point" },
+      { src: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=80", title: "Parvati River Kasol" },
+      { src: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1600&q=80", title: "Valley Panoramic Skyline" }
+    ];
+
+    let currentImgIndex = 0;
+
+    function updateModalImage(index) {
+      currentImgIndex = (index + galleryItems.length) % galleryItems.length;
+      modalImageDisplay.src = galleryItems[currentImgIndex].src;
+      modalCaption.textContent = `${galleryItems[currentImgIndex].title} (${currentImgIndex + 1} of ${galleryItems.length})`;
+    }
+
+    // Attach click listeners to all gallery marquee images
+    document.querySelectorAll('.hero-gallery-marquee .marquee-img').forEach(img => {
+      img.addEventListener('click', function() {
+        const index = parseInt(this.getAttribute('data-index'));
+        updateModalImage(index);
+        galleryModal.show();
+      });
+    });
+
+    // Next / Prev button events inside modal
+    document.getElementById('prevModalImg').addEventListener('click', () => {
+      updateModalImage(currentImgIndex - 1);
+    });
+
+    document.getElementById('nextModalImg').addEventListener('click', () => {
+      updateModalImage(currentImgIndex + 1);
+    });
+
+    // Keyboard navigation (Left/Right Arrow Key support)
+    document.addEventListener('keydown', (e) => {
+      const modalEl = document.getElementById('galleryModal');
+      if (modalEl.classList.contains('show')) {
+        if (e.key === 'ArrowLeft') {
+          updateModalImage(currentImgIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+          updateModalImage(currentImgIndex + 1);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
