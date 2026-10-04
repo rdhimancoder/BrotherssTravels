@@ -566,3 +566,15 @@ header {
   box-shadow: 0 0 10px rgba(56, 189, 248, .85); 
 }
 img.img-fallback { object-fit: cover; background: var(--bt-primary-container); }
+
+/* search page  */
+
+
+    .search-suggestion-item {
+      transition: background-color 0.15s ease-in-out;
+      cursor: pointer;
+    }
+
+    .search-suggestion-item:hover, .search-suggestion-item:focus {
+      background-color: #f1f5f9;
+    }

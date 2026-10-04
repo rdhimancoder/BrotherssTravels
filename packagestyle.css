@@ -1,0 +1,287 @@
+/* package overview */
+        /* Fixed Top Navbar Fixes */
+    .bt-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1040;
+      width: 100%;
+    }
+
+    /* Sticky Header Hidden by default, shown on scroll via JS */
+    .bt-sticky-header {
+      position: fixed;
+      top: 0; /* Attach to top of viewport */
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      background: var(--bt-primary);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-100%);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .bt-sticky-header.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .bt-hero {
+      position: relative;
+      background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('hero-bg.jpg') center/cover no-repeat;
+      padding: 60px 0;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .bt-hero {
+        padding: 60px 0;
+      }
+    }
+
+    .bt-badge {
+      display: inline-block;
+      padding: 0.35em 0.8em;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 50rem;
+    }
+
+    .bt-badge-amber {
+      background-color: #fef3c7;
+      color: #b45309;
+    }
+
+    .bt-badge-primary {
+      background-color: #e0f2fe;
+      color: #0369a1;
+    }
+
+    /* Infinite Horizontal Gallery Slider */
+    .hero-gallery-marquee {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      border-radius: 1rem;
+      padding: 10px 0;
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: infiniteScroll 22s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    .marquee-img {
+      width: 240px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      cursor: pointer;
+      transition: transform 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+    }
+
+        @media (min-width: 768px) {
+      .marquee-img {
+        width: 240px;
+        height: 160px;
+      }
+    }
+
+    .marquee-img:hover {
+      transform: translateY(-4px) scale(1.03);
+      border-color: #f59e0b;
+      filter: brightness(1.08);
+    }
+
+    @keyframes infiniteScroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Modal Image Lightbox Custom Styling */
+    .modal-img-viewer .modal-content {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .modal-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1056;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .modal-nav-btn:hover {
+      background: rgba(255, 255, 255, 0.4);
+      color: #ffffff;
+    }
+
+    .modal-nav-prev { left: 10px; }
+    .modal-nav-next { right: 10px; }
+
+    @media (min-width: 768px) {
+      .modal-nav-prev { left: 20px; }
+      .modal-nav-next { right: 20px; }
+      .modal-nav-btn { width: 48px; height: 48px; }
+    }
+
+
+    .bt-card-sticky {
+      position: relative;
+    }
+
+        @media (min-width: 992px) {
+      .bt-card-sticky {
+        position: sticky;
+        top: 90px;
+      }
+    }
+
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 2px solid var(--bt-border);
+    }
+
+        @media (min-width: 768px) {
+      .timeline {
+        padding-left: 2rem;
+      }
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2.5rem;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2.05rem;
+      top: 0.25rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background-color: var(--bt-secondary);
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 0 2px var(--bt-secondary);
+    }
+
+        @media (min-width: 768px) {
+      .timeline-dot {
+        left: -2.55rem;
+        width: 1.1rem;
+        height: 1.1rem;
+      }
+    }
+
+    .timeline-img {
+      width: 50%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+
+    .bg-bt-surface-low {
+      background-color: var(--bt-surface-low);
+    }
+
+    .btn-bt-primary {
+      background-color: var(--bt-secondary);
+      color: #ffffff;
+      border: none;
+      font-weight: 600;
+    }
+
+    .btn-bt-primary:hover {
+      background-color: #0369a1;
+      color: #ffffff;
+    }
+
+    .text-bt-primary {
+      color: var(--bt-primary);
+    }
+
+    .hover-white:hover {
+      color: #ffffff !important;
+    }
+
+    /* Package Slider Styling */
+    .pkg-slider-container {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .pkg-slider-container::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .pkg-slider-container::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 10px;
+    }
+
+    .pkg-slider-container::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 10px;
+    }
+
+    .pkg-slider-card {
+      flex: 0 0 260px;
+      scroll-snap-align: start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        @media (min-width: 576px) {
+      .pkg-slider-card {
+        flex: 0 0 300px;
+      }
+    }
+
+    .pkg-slider-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .pkg-card-img {
+      height: 180px;
+      object-fit: cover;
+    }
