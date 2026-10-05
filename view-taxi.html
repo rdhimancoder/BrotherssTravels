@@ -112,6 +112,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link bt-nav-link active" href="view-taxi.html">Mountain Taxi</a>
+              </li>              
+              <li class="nav-item">
+                <a class="nav-link bt-nav-link" href="one-way-taxi.html">One Way Booking</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link bt-nav-link" href="view-contact.html">Contact Us</a>
@@ -176,10 +179,10 @@
             <div class="col-12 col-md-3">
               <label class="form-label small fw-bold text-muted">Vehicle Type</label>
               <select class="form-select bg-light border-0 fw-semibold" id="taxiVehicle">
-                <option value="18">Innova Crysta 4x4 (₹18/km)</option>
-                <option value="22">Mahindra Thar 4WD (₹22/km)</option>
-                <option value="28">Force Luxury Urbania (₹28/km)</option>
-                <option value="13">Dzire / Etios Sedan (₹13/km)</option>
+                <option value="18">Innova Crysta 4x4 (₹22/km)</option>
+                <option value="22">Mahindra Thar 4WD (₹25/km)</option>
+                <option value="28">Force Luxury Urbania (₹35/km)</option>
+                <option value="13">Swift Dzire(₹12/km)</option>
               </select>
             </div>
             <div class="col-12 col-md-3">
@@ -202,65 +205,66 @@
 
         <!-- Tariff Table -->
         <div class="apple-reveal">
-  <h3 class="h4 font-display fw-bold text-bt-primary mb-3">Official Mountain Fleet Tariffs</h3>
-  <div class="table-responsive rounded-3 border">
-    <table class="table bt-table mb-0">
-      <thead>
-        <tr>
-          <th>Vehicle Model</th>
-          <th>Capacity</th>
-          <th>Key Features</th>
-          <th>Per KM Rate</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="fw-bold text-bt-primary">Toyota Innova Crysta</td>
-          <td>6 Passengers</td>
-          <td>Captain Seats, AC, Heavy Incline Power</td>
-          <td class="fw-bold text-success">₹18 / km</td>
-          <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Toyota Innova Crysta', 'Taxi Service', '₹18/km')">Book</button></td>
-        </tr>
-        <tr>
-          <td class="fw-bold text-bt-primary">Toyota Fortuner</td>
-          <td>6 Passengers</td>
-          <td>4x4 Capability, High Ground Clearance, Luxury Interior</td>
-          <td class="fw-bold text-success">₹25 / km</td>
-          <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Toyota Fortuner', 'Luxury SUV', '₹25/km')">Book</button></td>
-        </tr>
-        <tr>
-          <td class="fw-bold text-bt-primary">Maruti Suzuki Ertiga</td>
-          <td>6 Passengers</td>
-          <td>Comfortable MUV, AC, Fuel Efficient Hill Transit</td>
-          <td class="fw-bold text-success">₹15 / km</td>
-          <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Maruti Suzuki Ertiga', 'MUV Taxi', '₹15/km')">Book</button></td>
-        </tr>
-        <tr>
-          <td class="fw-bold text-bt-primary">Mahindra Thar 4WD</td>
-          <td>4 Passengers</td>
-          <td>Off-Road 4x4, High Ground Clearance</td>
-          <td class="fw-bold text-success">₹22 / km</td>
-          <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Mahindra Thar 4WD', 'Extreme Taxi', '₹22/km')">Book</button></td>
-        </tr>
-        <tr>
-          <td class="fw-bold text-bt-primary">Force Luxury Urbania</td>
-          <td>12–16 Passengers</td>
-          <td>Recliner Pushback, AC, Sound System</td>
-          <td class="fw-bold text-success">₹28 / km</td>
-          <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Force Urbania', 'Group Transit', '₹28/km')">Book</button></td>
-        </tr>
-        <tr>
-          <td class="fw-bold text-bt-primary">Swift Dzire / Etios</td>
-          <td>4 Passengers</td>
-          <td>Smooth Highway & Lower Valley Transit</td>
-          <td class="fw-bold text-success">₹13 / km</td>
-          <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Swift Dzire/Etios', 'Sedan Taxi', '₹13/km')">Book</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+          <h3 class="h4 font-display fw-bold text-bt-primary mb-3">Official Mountain Fleet Tariffs</h3>
+          <span class="small text-uppercase fw-bold text-bt-secondary tracking-wider">Toll tax, state tax, and parking charges are extra. Night allowance is ₹1,000 extra.</span><br><br>
+            <div class="table-responsive rounded-3 border">
+              <table class="table bt-table mb-0">
+                <thead>
+                  <tr>
+                    <th>Vehicle Model</th>
+                    <th>Capacity</th>
+                    <th>Key Features</th>
+                    <th>Per KM Rate</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-bold text-bt-primary">Toyota Innova Crysta</td>
+                    <td>6 Passengers</td>
+                    <td>Captain Seats, AC, Heavy Incline Power</td>
+                    <td class="fw-bold text-success">₹22 / km</td>
+                    <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Toyota Innova Crysta', 'Taxi Service', '₹22/km')">Book</button></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-bt-primary">Toyota Fortuner</td>
+                    <td>6 Passengers</td>
+                    <td>4x4 Capability, High Ground Clearance, Luxury Interior</td>
+                    <td class="fw-bold text-success">₹28 / km</td>
+                    <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Toyota Fortuner', 'Luxury SUV', '₹28/km')">Book</button></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-bt-primary">Maruti Suzuki Ertiga</td>
+                    <td>6 Passengers</td>
+                    <td>Comfortable MUV, AC, Fuel Efficient Hill Transit</td>
+                    <td class="fw-bold text-success">₹15 / km</td>
+                    <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Maruti Suzuki Ertiga', 'MUV Taxi', '₹15/km')">Book</button></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-bt-primary">Mahindra Thar 4WD</td>
+                    <td>4 Passengers</td>
+                    <td>Off-Road 4x4, High Ground Clearance</td>
+                    <td class="fw-bold text-success">₹25 / km</td>
+                    <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Mahindra Thar 4WD', 'Extreme Taxi', '₹25/km')">Book</button></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-bt-primary">Force Luxury Urbania</td>
+                    <td>12–16 Passengers</td>
+                    <td>Recliner Pushback, AC, Sound System</td>
+                    <td class="fw-bold text-success">₹35 / km</td>
+                    <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Force Urbania', 'Group Transit', '₹35/km')">Book</button></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-bt-primary">Swift Dzire</td>
+                    <td>4 Passengers</td>
+                    <td>Smooth Highway & Lower Valley Transit</td>
+                    <td class="fw-bold text-success">₹12 / km</td>
+                    <td><button type="button" class="btn btn-sm btn-bt-secondary" onclick="openQuickBookModal('Swift Dzire', 'Sedan Taxi', '₹12/km')">Book</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </section>
