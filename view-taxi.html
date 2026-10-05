@@ -114,7 +114,7 @@
                 <a class="nav-link bt-nav-link active" href="view-taxi.html">Mountain Taxi</a>
               </li>              
               <li class="nav-item">
-                <a class="nav-link bt-nav-link" href="#">One Way Booking</a>
+                <a class="nav-link bt-nav-link" href="one-way-taxi.html">One Way Booking</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link bt-nav-link" href="view-contact.html">Contact Us</a>
@@ -156,52 +156,48 @@
       <div class="container my-5">
         <!-- Fare Estimator -->
         <div class="card bt-card p-4 shadow-sm mb-5 apple-reveal">
-          <h3 class="h5 font-display fw-bold text-bt-primary mb-3"><i class="bi bi-calculator-fill text-bt-secondary me-2"></i> Instant Fare Estimator</h3>
-          <div class="row g-3 align-items-end">
-            <div class="col-12 col-md-3">
-              <label class="form-label small fw-bold text-muted">Pickup Location</label>
-              <select class="form-select bg-light border-0 fw-semibold" id="taxiPickup">
-                <option value="Chandigarh">Chandigarh Airport / Station</option>
-                <option value="Delhi">Delhi NCR / IGI Airport</option>
-                <option value="Kalka">Kalka Station</option>
-                <option value="Manali">Manali Mall Road</option>
-              </select>
-            </div>
-            <div class="col-12 col-md-3">
-              <label class="form-label small fw-bold text-muted">Destination Drop</label>
-              <select class="form-select bg-light border-0 fw-semibold" id="taxiDrop">
-                <option value="Manali">Manali / Solang (310 km)</option>
-                <option value="Shimla">Shimla / Kufri (115 km)</option>
-                <option value="Spiti">Spiti Valley Kaza (450 km)</option>
-                <option value="Leh">Leh Ladakh Transit (700 km)</option>
-              </select>
-            </div>
-            <div class="col-12 col-md-3">
-              <label class="form-label small fw-bold text-muted">Vehicle Type</label>
-              <select class="form-select bg-light border-0 fw-semibold" id="taxiVehicle">
-                <option value="18">Innova Crysta 4x4 (₹22/km)</option>
-                <option value="22">Mahindra Thar 4WD (₹25/km)</option>
-                <option value="28">Force Luxury Urbania (₹35/km)</option>
-                <option value="13">Swift Dzire(₹12/km)</option>
-              </select>
-            </div>
-            <div class="col-12 col-md-3">
-              <button type="button" class="btn btn-bt-secondary w-100 py-2 fw-bold" onclick="calculateTaxiFare()">
-                Calculate Estimated Fare
-              </button>
-            </div>
-          </div>
+  <h3 class="h5 font-display fw-bold text-bt-primary mb-3"><i class="bi bi-calculator-fill text-bt-secondary me-2"></i> Instant Fare Estimator</h3>
+  <div class="row g-3 align-items-end">
+    <div class="col-12 col-md-3">
+  <label class="form-label small fw-bold text-muted">Pickup Location</label>
+  <select class="form-select bg-light border-0 fw-semibold" id="taxiPickup">
+    <!-- Populated dynamically via JS -->
+  </select>
+</div>
+<div class="col-12 col-md-3">
+  <label class="form-label small fw-bold text-muted">Destination Drop</label>
+  <select class="form-select bg-light border-0 fw-semibold" id="taxiDrop">
+    <!-- Populated dynamically via JS -->
+  </select>
+</div>
+    <div class="col-12 col-md-3">
+      <label class="form-label small fw-bold text-muted">Vehicle Type</label>
+      <select class="form-select bg-light border-0 fw-semibold" id="taxiVehicle">
+        <option value="22">Toyota Innova Crysta (₹22/km)</option>
+        <option value="28">Toyota Fortuner (₹28/km)</option>
+        <option value="15">Maruti Suzuki Ertiga (₹15/km)</option>
+        <option value="25">Mahindra Thar 4WD (₹25/km)</option>
+        <option value="35">Force Luxury Urbania (₹35/km)</option>
+        <option value="12">Swift Dzire (₹12/km)</option>
+      </select>
+    </div>
+    <div class="col-12 col-md-3">
+      <button type="button" class="btn btn-bt-secondary w-100 py-2 fw-bold" onclick="calculateTaxiFare()">
+        Calculate Estimated Fare
+      </button>
+    </div>
+  </div>
 
-          <div id="fareResultBox" class="mt-4 p-3 bg-bt-surface-low rounded border border-success d-none">
-            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
-              <div>
-                <span class="small text-muted d-block">Estimated Total Fare (All Tolls & State Tax Included):</span>
-                <span class="h3 font-display fw-bold text-bt-primary mb-0" id="fareAmountDisplay">₹0</span>
-              </div>
-              <button type="button" class="btn btn-bt-primary" onclick="bookCalculatedTaxi()">Book This Cab Now</button>
-            </div>
-          </div>
-        </div>
+  <div id="fareResultBox" class="mt-4 p-3 bg-bt-surface-low rounded border border-success d-none">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+      <div>
+        <span class="small text-muted d-block">Estimated Total Fare (All Tolls & State Tax Included):</span>
+        <span class="h3 font-display fw-bold text-bt-primary mb-0" id="fareAmountDisplay">₹0</span>
+      </div>
+      <button type="button" class="btn btn-bt-primary" onclick="bookCalculatedTaxi()">Book This Cab Now</button>
+    </div>
+  </div>
+</div>
 
         <!-- Tariff Table -->
         <div class="apple-reveal">
