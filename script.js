@@ -293,29 +293,200 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ==========================================================================
    Mountain Taxi Calculator
    ========================================================================== */
+  // Major cities covering every Indian state capital, major hubs, and Delhi NCR
+const majorCities = [
+  // --- Delhi NCR Hubs ---
+  { name: "Delhi_IGI", label: "Delhi - IGI Airport", lat: 28.5562, lng: 77.1000 },
+  { name: "Delhi_NDLS", label: "Delhi - New Delhi Railway Station", lat: 28.6431, lng: 77.2197 },
+  { name: "Noida", label: "Noida / Greater Noida (NCR)", lat: 28.5355, lng: 77.3910 },
+  { name: "Gurugram", label: "Gurugram Cyber City (NCR)", lat: 28.4595, lng: 77.0266 },
+  { name: "Faridabad", label: "Faridabad (NCR)", lat: 28.4089, lng: 77.3178 },
+  { name: "Ghaziabad", label: "Ghaziabad (NCR)", lat: 28.6692, lng: 77.4538 },
+
+  // --- Northern & Himalayan Region ---
+  { name: "Chandigarh", label: "Chandigarh Airport / Station", lat: 30.7333, lng: 76.7794 },
+  { name: "Kalka", label: "Kalka Station", lat: 30.8383, lng: 76.9358 },
+  { name: "Shimla", label: "Shimla / Kufri", lat: 31.1048, lng: 77.1734 },
+  { name: "Manali", label: "Manali / Solang", lat: 32.2432, lng: 77.1892 },
+  { name: "Spiti", label: "Spiti Valley (Kaza)", lat: 32.2276, lng: 78.0710 },
+  { name: "Leh", label: "Leh Ladakh Transit", lat: 34.1526, lng: 77.5771 },
+  { name: "Srinagar", label: "Srinagar (Jammu & Kashmir)", lat: 34.0837, lng: 74.7973 },
+  { name: "Dehradun", label: "Dehradun / Mussoorie (Uttarakhand)", lat: 30.3165, lng: 78.0322 },
+
+  // --- North & Central India ---
+  { name: "Jaipur", label: "Jaipur (Rajasthan)", lat: 26.9124, lng: 75.7873 },
+  { name: "Lucknow", label: "Lucknow (Uttar Pradesh)", lat: 26.8467, lng: 80.9462 },
+  { name: "Patna", label: "Patna (Bihar)", lat: 25.5941, lng: 85.1376 },
+  { name: "Ranchi", label: "Ranchi (Jharkhand)", lat: 23.3441, lng: 85.3096 },
+  { name: "Bhopal", label: "Bhopal (Madhya Pradesh)", lat: 23.2599, lng: 77.4126 },
+  { name: "Raipur", label: "Raipur (Chhattisgarh)", lat: 21.2514, lng: 81.6296 },
+
+  // --- Western India ---
+  { name: "Ahmedabad", label: "Ahmedabad (Gujarat)", lat: 23.0225, lng: 72.5714 },
+  { name: "Mumbai", label: "Mumbai (Maharashtra)", lat: 19.0760, lng: 72.8777 },
+  { name: "Panaji", label: "Panaji (Goa)", lat: 15.4909, lng: 73.8278 },
+
+  // --- Southern India ---
+  { name: "Bengaluru", label: "Bengaluru (Karnataka)", lat: 12.9716, lng: 77.5946 },
+  { name: "Chennai", label: "Chennai (Tamil Nadu)", lat: 13.0827, lng: 80.2707 },
+  { name: "Hyderabad", label: "Hyderabad (Telangana)", lat: 17.3850, lng: 78.4867 },
+  { name: "Amaravati", label: "Amaravati / Vijayawada (Andhra Pradesh)", lat: 16.5131, lng: 80.5165 },
+  { name: "Thiruvananthapuram", label: "Thiruvananthapuram (Kerala)", lat: 8.5241, lng: 76.9366 },
+
+  // --- Eastern & North-Eastern India ---
+  { name: "Kolkata", label: "Kolkata (West Bengal)", lat: 22.5726, lng: 88.3639 },
+  { name: "Bhubaneswar", label: "Bhubaneswar (Odisha)", lat: 20.2961, lng: 85.8245 },
+  { name: "Gangtok", label: "Gangtok (Sikkim)", lat: 27.3389, lng: 88.6065 },
+  { name: "Guwahati", label: "Guwahati (Assam)", lat: 26.1445, lng: 91.7362 },
+  { name: "Shillong", label: "Shillong (Meghalaya)", lat: 25.5788, lng: 91.8933 },
+  { name: "Itanagar", label: "Itanagar (Arunachal Pradesh)", lat: 27.0844, lng: 93.6053 },
+  { name: "Imphal", label: "Imphal (Manipur)", lat: 24.8170, lng: 93.9368 },
+  { name: "Kohima", label: "Kohima (Nagaland)", lat: 25.6751, lng: 94.1086 },
+  { name: "Aizawl", label: "Aizawl (Mizoram)", lat: 23.7271, lng: 92.7176 },
+  { name: "Agartala", label: "Agartala (Tripura)", lat: 23.8315, lng: 91.2868 }
+];
+
+// Terrain-adjusted manual overrides for specific routes
+const customRouteOverrides = {
+  "Chandigarh-Manali": 310,
+  "Chandigarh-Shimla": 115,
+  "Chandigarh-Spiti": 450,
+  "Chandigarh-Leh": 700,
+  "Delhi_IGI-Manali": 540,
+  "Delhi_IGI-Shimla": 340,
+  "Delhi_IGI-Spiti": 700,
+  "Delhi_IGI-Leh": 950,
+  "Manali-Spiti": 180,
+  "Manali-Leh": 430
+};
+
+// Calculate driving distance dynamically via Haversine + road winding multiplier
+function getRouteDistance(fromName, toName) {
+  if (fromName === toName) return 0;
+
+  const key1 = `${fromName}-${toName}`;
+  const key2 = `${toName}-${fromName}`;
+  if (customRouteOverrides[key1]) return customRouteOverrides[key1];
+  if (customRouteOverrides[key2]) return customRouteOverrides[key2];
+
+  const cityA = majorCities.find(c => c.name === fromName);
+  const cityB = majorCities.find(c => c.name === toName);
+
+  if (!cityA || !cityB) return 300;
+
+  const R = 6371;
+  const dLat = (cityB.lat - cityA.lat) * (Math.PI / 180);
+  const dLng = (cityB.lng - cityA.lng) * (Math.PI / 180);
+
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(cityA.lat * (Math.PI / 180)) * Math.cos(cityB.lat * (Math.PI / 180)) *
+            Math.sin(dLng / 2) * Math.sin(dLng / 2);
+
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return Math.round(R * c * 1.3);
+}
+
+// Populate Pickup and Destination selects
+function initFareCalculator() {
+  const pickupSelect = document.getElementById("taxiPickup");
+  const dropSelect = document.getElementById("taxiDrop");
+
+  if (!pickupSelect || !dropSelect) return;
+
+  pickupSelect.innerHTML = "";
+
+  // Populate Pickup options
+  majorCities.forEach(city => {
+    const opt = document.createElement("option");
+    opt.value = city.name;
+    opt.textContent = city.label;
+    pickupSelect.appendChild(opt);
+  });
+
+  // Filter and populate Destination options without current Pickup location
+  function updateDestinationOptions() {
+    const selectedPickup = pickupSelect.value;
+    const previousDrop = dropSelect.value;
+
+    dropSelect.innerHTML = "";
+
+    majorCities.forEach(city => {
+      if (city.name !== selectedPickup) {
+        const distance = getRouteDistance(selectedPickup, city.name);
+        const opt = document.createElement("option");
+        opt.value = city.name;
+        opt.textContent = `${city.label} (${distance} km)`;
+        dropSelect.appendChild(opt);
+      }
+    });
+
+    if (previousDrop && previousDrop !== selectedPickup) {
+      dropSelect.value = previousDrop;
+    }
+  }
+
+  // Event listener when pickup changes
+  pickupSelect.addEventListener("change", updateDestinationOptions);
+
+  // Initial population call
+  updateDestinationOptions();
+}
+
+// Fare calculation logic triggered on button click
 function calculateTaxiFare() {
-  const dropSelect = document.getElementById('taxiDrop');
-  const vehicleSelect = document.getElementById('taxiVehicle');
+  const pickup = document.getElementById("taxiPickup").value;
+  const drop = document.getElementById("taxiDrop").value;
+  const vehicleSelect = document.getElementById("taxiVehicle");
 
-  let distanceKm = 310;
-  if (dropSelect.value === 'Shimla') distanceKm = 115;
-  if (dropSelect.value === 'Spiti') distanceKm = 450;
-  if (dropSelect.value === 'Leh') distanceKm = 700;
+  if (!pickup || !drop || !vehicleSelect) {
+    alert("Please select pickup location, destination drop, and vehicle type.");
+    return;
+  }
 
-  const ratePerKm = parseInt(vehicleSelect.value);
-  const totalFare = distanceKm * ratePerKm;
+  const ratePerKm = parseFloat(vehicleSelect.value);
+  const distance = getRouteDistance(pickup, drop);
+  const totalFare = distance * ratePerKm;
 
-  const resultBox = document.getElementById('fareResultBox');
-  const displayVal = document.getElementById('fareAmountDisplay');
+  const fareDisplay = document.getElementById("fareAmountDisplay");
+  const resultBox = document.getElementById("fareResultBox");
 
-  if (resultBox && displayVal) {
-    displayVal.innerText = `₹${totalFare.toLocaleString()}`;
-    resultBox.classList.remove('d-none');
+  if (fareDisplay && resultBox) {
+    fareDisplay.textContent = `₹${totalFare.toLocaleString("en-IN")} (${distance} km @ ₹${ratePerKm}/km)`;
+    resultBox.classList.remove("d-none");
+  }
+}
+
+// Helper to open quick booking modal with selected details
+function openQuickBookModal(title, category, price) {
+  const modalTitle = document.getElementById("modalItemTitle");
+  const modalPrice = document.getElementById("modalItemPrice");
+
+  if (modalTitle) modalTitle.textContent = title;
+  if (modalPrice) modalPrice.textContent = price;
+
+  const modalEl = document.getElementById("quickBookModal");
+  if (modalEl && window.bootstrap) {
+    const modal = new bootstrap.Modal(modalEl);
+    modal.show();
   }
 }
 
 function bookCalculatedTaxi() {
-  openQuickBookModal('Mountain Cab Taxi Ride', 'Taxi Transit', document.getElementById('fareAmountDisplay').innerText);
+  const pickupEl = document.getElementById("taxiPickup");
+  const dropEl = document.getElementById("taxiDrop");
+
+  const pickupText = pickupEl.options[pickupEl.selectedIndex].text;
+  const dropText = dropEl.options[dropEl.selectedIndex].text;
+  const fareText = document.getElementById("fareAmountDisplay").textContent;
+
+  openQuickBookModal(`${pickupText} to ${dropText}`, "Taxi Service", fareText);
+}
+
+// DOM Ready Safety Hook
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initFareCalculator);
+} else {
+  initFareCalculator();
 }
 
 /* ==========================================================================
