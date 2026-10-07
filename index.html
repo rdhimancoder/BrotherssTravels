@@ -115,7 +115,7 @@
                 <a class="nav-link bt-nav-link" href="view-taxi.html">Mountain Taxi</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link bt-nav-link" href="#">One Way Booking</a>
+                <a class="nav-link bt-nav-link" href="one-way-taxi.html">One Way Booking</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link bt-nav-link" href="view-contact.html">Contact Us</a>
@@ -369,7 +369,142 @@
           </div>
         </div>
       </div>
+      <!-- Featured Hotels Strip -->
+<div class="container my-5" id="hotels">
+  <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-2 apple-reveal">
+    <div>
+      <span class="small text-uppercase fw-bold text-bt-secondary tracking-wider">Selected Comfortable Accommodations.</span>
+      <h2 class="h3 font-display fw-bold text-bt-primary mb-0">Outstanding Mountain Resorts & Hotels</h2>
+    </div>
+    <!-- <a class="text-bt-secondary text-decoration-none fw-bold small d-flex align-items-center gap-1 cursor-pointer">
+      <span>View All Hotels</span> <i class="bi bi-arrow-right"></i>
+    </a> -->
+  </div>
 
+  <!-- Location Selectable Capsules for Hotels -->
+  <div class="d-flex align-items-center gap-2 mb-4 overflow-auto pb-2 bt-capsules-wrapper">
+    <button class="btn btn-sm bt-capsule-btn active" data-location="all">
+      <i class="bi bi-geo-alt-fill me-1"></i>All Locations
+    </button>
+    <button class="btn btn-sm bt-capsule-btn" data-location="manali">
+      Manali
+    </button>
+    <button class="btn btn-sm bt-capsule-btn" data-location="shimla">
+      Shimla
+    </button>
+    <button class="btn btn-sm bt-capsule-btn" data-location="ladakh">
+      Leh Ladakh
+    </button>
+    <button class="btn btn-sm bt-capsule-btn" data-location="spiti">
+      Spiti Valley
+    </button>
+  </div>
+
+  <!-- Card Results Grid -->
+  <div class="row g-4" id="cardsGrid">
+    <!-- Card 1: The Himalayan Pines Resort & Spa (Manali) -->
+    <div class="col-12 col-md-6 col-lg-4 apple-reveal card-item-col" data-location="manali">
+      <div class="card bt-card h-100">
+        <div class="bt-card-img-wrap" style="height: 220px;">
+          <img decoding="async" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80" alt="Himalayan Luxury Resort Manali">
+          <div class="bt-img-scrim"></div>
+          <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-primary">Luxury Stay</span>
+          <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.9 (280)</span>
+          <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+            <span class="small text-warning text-uppercase fw-bold">Manali Valley View</span>
+            <h3 class="h5 fw-bold mb-0 text-white">The Himalayan Pines Resort & Spa</h3>
+          </div>
+        </div>
+        <div class="card-body p-3 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+              <span class="fw-bold text-dark">Location:</span> Prini, Manali (Snow Peak View)<br>
+              <span class="fw-bold text-dark">Amenities:</span> Heated Rooms &bull; Spa &bull; Bonfire
+            </div>
+            <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Valley Facing Rooms with Balcony</li>
+            </ul>
+          </div>
+          <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+            <div>
+              <span class="small text-muted d-block">Starting from</span>
+              <span class="h5 fw-bold text-bt-primary mb-0">₹4,500 <small class="fw-normal text-muted fs-6">/night</small></span>
+            </div>
+            <a href="hotel-himalayan-pines.html" class="btn btn-sm btn-bt-primary px-3">View Hotel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Wildflower Haven (Shimla) -->
+    <div class="col-12 col-md-6 col-lg-4 apple-reveal card-item-col" data-location="shimla">
+      <div class="card bt-card h-100">
+        <div class="bt-card-img-wrap" style="height: 220px;">
+          <img decoding="async" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80" alt="Shimla Heritage Resort">
+          <div class="bt-img-scrim"></div>
+          <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-amber">Heritage Property</span>
+          <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.8 (190)</span>
+          <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+            <span class="small text-warning text-uppercase fw-bold">Pine Forest Ridge</span>
+            <h3 class="h5 fw-bold mb-0 text-white">Wildflower Haven & Heritage Spa</h3>
+          </div>
+        </div>
+        <div class="card-body p-3 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+              <span class="fw-bold text-dark">Location:</span> Mashobra, Shimla<br>
+              <span class="fw-bold text-dark">Amenities:</span> Indoor Pool &bull; Heritage Rooms &bull; Dining
+            </div>
+            <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Guided Nature Walks Through Pine Woods</li>
+            </ul>
+          </div>
+          <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+            <div>
+              <span class="small text-muted d-block">Starting from</span>
+              <span class="h5 fw-bold text-bt-primary mb-0">₹6,200 <small class="fw-normal text-muted fs-6">/night</small></span>
+            </div>
+            <a href="hotel-wildflower-haven.html" class="btn btn-sm btn-bt-primary px-3">View Hotel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Pangong Luxury Swiss Camps (Ladakh) -->
+    <div class="col-12 col-md-6 col-lg-4 apple-reveal card-item-col" data-location="ladakh">
+      <div class="card bt-card h-100">
+        <div class="bt-card-img-wrap" style="height: 220px;">
+          <img decoding="async" src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=900&q=80" alt="Ladakh Luxury Camps">
+          <div class="bt-img-scrim"></div>
+          <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-secondary">Unique Stay</span>
+          <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.9 (340)</span>
+          <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+            <span class="small text-warning text-uppercase fw-bold">Pangong Lake Shore</span>
+            <h3 class="h5 fw-bold mb-0 text-white">The Zen Ladakh Luxury Camps</h3>
+          </div>
+        </div>
+        <div class="card-body p-3 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+              <span class="fw-bold text-dark">Location:</span> Spangmik, Pangong Lake, Ladakh<br>
+              <span class="fw-bold text-dark">Amenities:</span> Oxygen Cylinders &bull; Heated Tents &bull; Stargazing
+            </div>
+            <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Direct Lake-Facing Heated Swiss Tents</li>
+            </ul>
+          </div>
+          <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+            <div>
+              <span class="small text-muted d-block">Starting from</span>
+              <span class="h5 fw-bold text-bt-primary mb-0">₹7,500 <small class="fw-normal text-muted fs-6">/night</small></span>
+            </div>
+            <a href="hotel-zen-ladakh.html" class="btn btn-sm btn-bt-primary px-3">View Hotel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
       <!-- Featured Tours Strip -->
       <div class="container my-5" id="destinations">
         <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-2 apple-reveal">
@@ -748,7 +883,7 @@
               <div class="card bt-card p-3 h-100">
                 <div class="d-flex justify-content-between align-items-center mb-2">
                   <span class="bt-badge bt-badge-amber">Most Popular</span>
-                  <span class="fw-bold text-bt-primary h5 mb-0">₹22 <small class="fs-6 text-muted">/km</small></span>
+                  <span class="fw-bold text-bt-primary h5 mb-0">₹18 <small class="fs-6 text-muted">/km</small></span>
                 </div>
                 <h3 class="h5 fw-bold text-bt-primary mb-1">Toyota Innova Crysta 4x4</h3>
                 <p class="small text-muted mb-3">Engineered for steep ghats, snow routes & hairpin switchbacks.</p>
@@ -760,7 +895,7 @@
                     <div class="col-6"><i class="bi bi-lungs-fill text-bt-primary me-1"></i> Medical O2 Kit</div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-bt-primary w-100 mt-auto" onclick="openQuickBookModal('Toyota Innova Crysta 4x4', 'Mountain SUV', '₹22 / km')">
+                <button type="button" class="btn btn-bt-primary w-100 mt-auto" onclick="openQuickBookModal('Toyota Innova Crysta 4x4', 'Mountain SUV', '₹18 / km')">
                   Select Premium SUV
                 </button>
               </div>
@@ -771,7 +906,7 @@
               <div class="card bt-card p-3 h-100 border-warning">
                 <div class="d-flex justify-content-between align-items-center mb-2">
                   <span class="bt-badge bt-badge-secondary">Extreme Off-Road</span>
-                  <span class="fw-bold text-bt-secondary-amber h5 mb-0">₹25 <small class="fs-6 text-muted">/km</small></span>
+                  <span class="fw-bold text-bt-secondary-amber h5 mb-0">₹22 <small class="fs-6 text-muted">/km</small></span>
                 </div>
                 <h3 class="h5 fw-bold text-bt-primary mb-1">Mahindra Thar 4WD</h3>
                 <p class="small text-muted mb-3">High altitude pass specialist for remote Spiti, Zanskar riverbeds.</p>
@@ -783,7 +918,7 @@
                     <div class="col-6"><i class="bi bi-shield-check text-bt-primary me-1"></i> High Ground Clearance</div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-bt-secondary w-100 mt-auto" onclick="openQuickBookModal('Mahindra Thar 4WD', 'Extreme 4x4', '₹25 / km')">
+                <button type="button" class="btn btn-bt-secondary w-100 mt-auto" onclick="openQuickBookModal('Mahindra Thar 4WD', 'Extreme 4x4', '₹22 / km')">
                   Select Thar 4WD
                 </button>
               </div>
@@ -794,7 +929,7 @@
               <div class="card bt-card p-3 h-100">
                 <div class="d-flex justify-content-between align-items-center mb-2">
                   <span class="bt-badge bt-badge-dark">Group Cruiser</span>
-                  <span class="fw-bold text-bt-primary h5 mb-0">₹35 <small class="fs-6 text-muted">/km</small></span>
+                  <span class="fw-bold text-bt-primary h5 mb-0">₹28-₹34 <small class="fs-6 text-muted">/km</small></span>
                 </div>
                 <h3 class="h5 fw-bold text-bt-primary mb-1">Force Urbania & Tempo</h3>
                 <p class="small text-muted mb-3">Custom luxury hill transit for large family groups & corporate teams.</p>
@@ -806,7 +941,7 @@
                     <div class="col-6"><i class="bi bi-person-badge-fill text-bt-primary me-1"></i> Dual Driver Crew</div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-bt-primary w-100 mt-auto" onclick="openQuickBookModal('Force Urbania / Tempo Traveller', 'Group Cruiser', '₹35 - ₹34 / km')">
+                <button type="button" class="btn btn-bt-primary w-100 mt-auto" onclick="openQuickBookModal('Force Urbania / Tempo Traveller', 'Group Cruiser', '₹28 - ₹34 / km')">
                   Select Luxury Cruiser
                 </button>
               </div>
