@@ -570,3 +570,18 @@ img.img-fallback { object-fit: cover; background: var(--bt-primary-container); }
     .search-suggestion-item:hover, .search-suggestion-item:focus {
       background-color: #f1f5f9;
     }
+
+    /* filters */
+
+    /* Custom active style for square filter tiles */
+.bt-capsule-btn {
+  border: 1px solid #dee2e6; /* Default inactive border */
+  background-color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+
+.bt-capsule-btn.active {
+  border: 2px solid #ff5722 !important; /* Bold primary accent border (change color code as needed) */
+  background-color: #fff3ed !important; /* Light fill color when active */
+  color: #ff5722 !important;
+}
