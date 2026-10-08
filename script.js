@@ -916,3 +916,45 @@ if (document.readyState === "loading") {
   function init() { document.querySelectorAll('.itinerary-modal').forEach(setup); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
+
+// hotel filtering for unique hotels (only affects the unique hotel grid, not other hotel grids on the page)
+
+document.addEventListener('DOMContentLoaded', function () {
+  const filterWrapper = document.getElementById('uniqueHotelFiltersWrapper');
+  const hotelGrid = document.getElementById('uniqueHotelGrid');
+
+  if (!filterWrapper || !hotelGrid) return;
+
+  // Target ONLY the unique hotel buttons
+  const filterButtons = filterWrapper.querySelectorAll('.hotel-pill');
+  const hotelCards = hotelGrid.querySelectorAll(':scope > div');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function (e) {
+      // CRITICAL: Stop all other scripts on the page from hearing this click
+      e.stopImmediatePropagation();
+      e.stopPropagation();
+
+      // Update active state only within the hotel wrapper
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+
+      // Get selected location using the new attribute name
+      const selectedLocation = this.getAttribute('data-hotel-filter');
+
+      // Filter only the cards inside #uniqueHotelGrid
+      hotelCards.forEach(card => {
+        // Check standard location attributes inside the card
+        const cardLocation = card.getAttribute('data-hb-loc') || card.getAttribute('data-hotel-loc');
+
+        if (cardLocation) {
+          if (selectedLocation === 'all' || cardLocation === selectedLocation) {
+            card.style.display = ''; // Show
+          } else {
+            card.style.display = 'none'; // Hide
+          }
+        }
+      });
+    }, true); // Use capture phase to intercept the click before global listeners
+  });
+});
