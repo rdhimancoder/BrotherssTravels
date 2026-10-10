@@ -368,158 +368,7 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- Featured Hotels Strip -->
-<div class="container my-5" id="hotels">
-  <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-2 apple-reveal">
-    <div>
-      <span class="small text-uppercase fw-bold text-bt-secondary tracking-wider">Selected Comfortable Accommodations.</span>
-      <h2 class="h3 font-display fw-bold text-bt-primary mb-0">Outstanding Mountain Resorts & Hotels</h2>
-    </div>
-    <!-- <a class="text-bt-secondary text-decoration-none fw-bold small d-flex align-items-center gap-1 cursor-pointer">
-      <span>View All Hotels</span> <i class="bi bi-arrow-right"></i>
-    </a> -->
-  </div>
-  <!-- hotel filters -->
-  <div class="d-flex align-items-center justify-content-start justify-content-lg-center gap-2 mb-4 overflow-auto pb-2 bt-capsules-wrapper" id="uniqueHotelFiltersWrapper">
-  
-  <!-- All Locations -->
-  <button class="btn btn-sm bt-capsule-btn hotel-pill active flex-shrink-0 d-flex flex-column align-items-center justify-content-center p-2 text-center" style="width: 95px; height: 90px; border-radius: 12px;" data-hotel-filter="all">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256" class="mb-1"><path d="M213.66,82.34l-80-80a8,8,0,0,0-11.32,0l-80,80A8,8,0,0,0,48,96H64V216a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V96h16a8,8,0,0,0,5.66-13.66ZM176,216H80V96h96ZM128,32l64,64H64Z"></path></svg>
-    <span class="small lh-sm">All Locations</span>
-  </button>
-
-  <!-- Manali (Alpine Tree & Peak) -->
-  <button class="btn btn-sm bt-capsule-btn hotel-pill flex-shrink-0 d-flex flex-column align-items-center justify-content-center p-2 text-center" style="width: 90px; height: 90px; border-radius: 12px;" data-hotel-filter="manali">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256" class="mb-1"><path d="M224,208H32a8,8,0,0,1-6.4-12.8l96-128a8,8,0,0,1,12.8,0l96,128A8,8,0,0,1,224,208Zm-96-118.6L54.6,192H201.4ZM136,136v40a8,8,0,0,1-16,0V136a8,8,0,0,1,16,0Zm0-40v16a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"></path></svg>
-    <span class="small lh-sm">Manali</span>
-  </button>
-
-  <!-- Shimla (Snowy / Iced Hill Station Roofs) -->
-  <button class="btn btn-sm bt-capsule-btn hotel-pill flex-shrink-0 d-flex flex-column align-items-center justify-content-center p-2 text-center" style="width: 90px; height: 90px; border-radius: 12px;" data-hotel-filter="shimla">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256" class="mb-1"><path d="M232,200a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,200ZM120,40l-88,88a8,8,0,0,0,11.31,11.31L48,123.31V184h64V136a8,8,0,0,1,16,0v48h64V123.31l14.69,14.69a8,8,0,0,0,11.31-11.31ZM120,58.34,167.66,106H72.34Z"></path></svg>
-    <span class="small lh-sm">Shimla</span>
-  </button>
-
-  <!-- Leh Ladakh (High Altitude Stupa / Monastery) -->
-  <button class="btn btn-sm bt-capsule-btn hotel-pill flex-shrink-0 d-flex flex-column align-items-center justify-content-center p-2 text-center" style="width: 90px; height: 90px; border-radius: 12px;" data-hotel-filter="ladakh">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256" class="mb-1"><path d="M237.58,181.33,139.66,40.16a16,16,0,0,0-25.32,0L16.42,181.33A16,16,0,0,0,29.08,206H226.92a16,16,0,0,0,12.66-24.67ZM127,56l78.7,112H48.3ZM226.92,190H29.08a.93.93,0,0,1-.79-.5,1,1,0,0,1,.11-1.07l97.92-141.17a.64.64,0,0,1,1.06,0l97.92,141.17a1,1,0,0,1,.11,1.07A.93.93,0,0,1,226.92,190Z"></path></svg>
-    <span class="small lh-sm">Leh Ladakh</span>
-  </button>
-
-  <!-- Spiti Valley (Rugged Canyon / Valley) -->
-  <!--<button class="btn btn-sm bt-capsule-btn hotel-pill flex-shrink-0 d-flex flex-column align-items-center justify-content-center p-2 text-center" style="width: 95px; height: 90px; border-radius: 12px;" data-hotel-filter="spiti">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256" class="mb-1"><path d="M228.24,195.76l-96-96a8,8,0,0,0-11.32,0l-96,96A8,8,0,0,0,32,208H224a8,8,0,0,0,6.24-12.24ZM45.25,192,128,109.25,210.75,192ZM216,80a8,8,0,0,0-8-8H160V48a8,8,0,0,0-16,0V72H96V48a8,8,0,0,0-16,0V72H48a8,8,0,0,0,0,16H208A8,8,0,0,0,216,80Z"></path></svg>
-    <span class="small lh-sm">Spiti Valley</span>
-  </button>-->
-
-</div>
-
-  <!-- Card Results Grid -->
-   <div class="row g-4" id="uniqueHotelGrid">
-    <!-- Card 1: The Himalayan Pines Resort & Spa (Manali) -->
-     <div class="col-12 col-md-6 col-lg-4 apple-reveal hb-card-item" data-hb-loc="manali">
-      <div class="card bt-card h-100">
-        <div class="bt-card-img-wrap" style="height: 220px;">
-          <img decoding="async" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80" alt="Himalayan Luxury Resort Manali">
-          <div class="bt-img-scrim"></div>
-          <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-primary">Luxury Stay</span>
-          <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.9 (280)</span>
-          <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
-            <span class="small text-warning text-uppercase fw-bold">Manali Valley View</span>
-            <h3 class="h5 fw-bold mb-0 text-white">The Himalayan Pines Resort & Spa</h3>
-          </div>
-        </div>
-        <div class="card-body p-3 d-flex flex-column justify-content-between">
-          <div>
-            <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
-              <span class="fw-bold text-dark">Location:</span> Prini, Manali (Snow Peak View)<br>
-              <span class="fw-bold text-dark">Amenities:</span> Heated Rooms &bull; Spa &bull; Bonfire
-            </div>
-            <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
-              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Valley Facing Rooms with Balcony</li>
-            </ul>
-          </div>
-          <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
-            <div>
-              <span class="small text-muted d-block">Starting from</span>
-              <span class="h5 fw-bold text-bt-primary mb-0">₹4,500 <small class="fw-normal text-muted fs-6">/night</small></span>
-            </div>
-            <a href="hotel-himalayan-pines.html" class="btn btn-sm btn-bt-primary px-3">View Hotel</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 2: Wildflower Haven (Shimla) -->
-          <div class="col-12 col-md-6 col-lg-4 apple-reveal hb-card-item" data-hb-loc="shimla">
-      <div class="card bt-card h-100">
-        <div class="bt-card-img-wrap" style="height: 220px;">
-          <img decoding="async" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80" alt="Shimla Heritage Resort">
-          <div class="bt-img-scrim"></div>
-          <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-amber">Heritage Property</span>
-          <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.8 (190)</span>
-          <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
-            <span class="small text-warning text-uppercase fw-bold">Pine Forest Ridge</span>
-            <h3 class="h5 fw-bold mb-0 text-white">Wildflower Haven & Heritage Spa</h3>
-          </div>
-        </div>
-        <div class="card-body p-3 d-flex flex-column justify-content-between">
-          <div>
-            <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
-              <span class="fw-bold text-dark">Location:</span> Mashobra, Shimla<br>
-              <span class="fw-bold text-dark">Amenities:</span> Indoor Pool &bull; Heritage Rooms &bull; Dining
-            </div>
-            <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
-              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Guided Nature Walks Through Pine Woods</li>
-            </ul>
-          </div>
-          <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
-            <div>
-              <span class="small text-muted d-block">Starting from</span>
-              <span class="h5 fw-bold text-bt-primary mb-0">₹6,200 <small class="fw-normal text-muted fs-6">/night</small></span>
-            </div>
-            <a href="hotel-wildflower-haven.html" class="btn btn-sm btn-bt-primary px-3">View Hotel</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 3: Pangong Luxury Swiss Camps (Ladakh) -->
-      <div class="col-12 col-md-6 col-lg-4 apple-reveal hb-card-item" data-hb-loc="ladakh">
-      <div class="card bt-card h-100">
-        <div class="bt-card-img-wrap" style="height: 220px;">
-          <img decoding="async" src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=900&q=80" alt="Ladakh Luxury Camps">
-          <div class="bt-img-scrim"></div>
-          <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-secondary">Unique Stay</span>
-          <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.9 (340)</span>
-          <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
-            <span class="small text-warning text-uppercase fw-bold">Pangong Lake Shore</span>
-            <h3 class="h5 fw-bold mb-0 text-white">The Zen Ladakh Luxury Camps</h3>
-          </div>
-        </div>
-        <div class="card-body p-3 d-flex flex-column justify-content-between">
-          <div>
-            <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
-              <span class="fw-bold text-dark">Location:</span> Spangmik, Pangong Lake, Ladakh<br>
-              <span class="fw-bold text-dark">Amenities:</span> Oxygen Cylinders &bull; Heated Tents &bull; Stargazing
-            </div>
-            <ul class="list-unstyled small text-muted mb-3 d-flex flex-column gap-1">
-              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i> Direct Lake-Facing Heated Swiss Tents</li>
-            </ul>
-          </div>
-          <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
-            <div>
-              <span class="small text-muted d-block">Starting from</span>
-              <span class="h5 fw-bold text-bt-primary mb-0">₹7,500 <small class="fw-normal text-muted fs-6">/night</small></span>
-            </div>
-            <a href="hotel-zen-ladakh.html" class="btn btn-sm btn-bt-primary px-3">View Hotel</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+      </div>      
       <!-- Featured Tours Strip -->
       <div class="container my-5" id="destinations">
         <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-2 apple-reveal">
@@ -550,7 +399,10 @@
   <button class="btn btn-sm bt-capsule-btn flex-shrink-0 d-flex flex-column align-items-center justify-content-center p-2 text-center"
           style="width: 95px; height: 90px; border-radius: 12px;"
           data-location="himachal">
-	  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256" class="mb-1"><path d="M228.24,195.76l-96-96a8,8,0,0,0-11.32,0l-96,96A8,8,0,0,0,32,208H224a8,8,0,0,0,6.24-12.24ZM45.25,192,128,109.25,210.75,192ZM216,80a8,8,0,0,0-8-8H160V48a8,8,0,0,0-16,0V72H96V48a8,8,0,0,0-16,0V72H48a8,8,0,0,0,0,16H208A8,8,0,0,0,216,80Z"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+         viewBox="0 0 256 256" class="mb-1">
+      <path d="M232,200a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,200ZM120,40l-88,88a8,8,0,0,0,11.31,11.31L48,123.31V184h64V136a8,8,0,0,1,16,0v48h64V123.31l14.69,14.69a8,8,0,0,0,11.31-11.31ZM120,58.34,167.66,106H72.34Z"></path>
+    </svg>
     <span class="small lh-sm">Himachal</span>
   </button>
 
@@ -909,6 +761,138 @@
 </div>
 </div>
       </div>
+
+      <!-- Featured Hotels Strip -->
+<div class="container my-5" id="hotels">
+  <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-2 apple-reveal">
+    <div>
+      <span class="small text-uppercase fw-bold text-bt-secondary tracking-wider">Selected Comfortable Accommodations.</span>
+      <h2 class="h3 font-display fw-bold text-bt-primary mb-0">Outstanding Mountain Resorts & Hotels</h2>
+    </div>
+    <!-- <a class="text-bt-secondary text-decoration-none fw-bold small d-flex align-items-center gap-1 cursor-pointer">
+      <span>View All Hotels</span> <i class="bi bi-arrow-right"></i>
+    </a> -->
+  </div>
+  <!-- hotel filters -->
+  <!-- <div class="d-flex align-items-center justify-content-start justify-content-lg-center gap-2 mb-4 overflow-auto pb-2 bt-capsules-wrapper" id="uniqueHotelFiltersWrapper">
+  <button class="btn btn-sm bt-capsule-btn hotel-pill active flex-shrink-0 d-flex flex-column align-items-center justify-content-center p-2 text-center" style="width: 95px; height: 90px; border-radius: 12px;" data-hotel-filter="all">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256" class="mb-1"><path d="M213.66,82.34l-80-80a8,8,0,0,0-11.32,0l-80,80A8,8,0,0,0,48,96H64V216a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V96h16a8,8,0,0,0,5.66-13.66ZM176,216H80V96h96ZM128,32l64,64H64Z"></path></svg>
+    <span class="small lh-sm">All Locations</span>
+  </button>
+  <button class="btn btn-sm bt-capsule-btn hotel-pill flex-shrink-0 d-flex flex-column align-items-center justify-content-center p-2 text-center" style="width: 90px; height: 90px; border-radius: 12px;" data-hotel-filter="manali">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256" class="mb-1"><path d="M224,208H32a8,8,0,0,1-6.4-12.8l96-128a8,8,0,0,1,12.8,0l96,128A8,8,0,0,1,224,208Zm-96-118.6L54.6,192H201.4ZM136,136v40a8,8,0,0,1-16,0V136a8,8,0,0,1,16,0Zm0-40v16a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"></path></svg>
+    <span class="small lh-sm">Manali</span>
+  </button>
+  <button class="btn btn-sm bt-capsule-btn hotel-pill flex-shrink-0 d-flex flex-column align-items-center justify-content-center p-2 text-center" style="width: 90px; height: 90px; border-radius: 12px;" data-hotel-filter="shimla">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256" class="mb-1"><path d="M232,200a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,200ZM120,40l-88,88a8,8,0,0,0,11.31,11.31L48,123.31V184h64V136a8,8,0,0,1,16,0v48h64V123.31l14.69,14.69a8,8,0,0,0,11.31-11.31ZM120,58.34,167.66,106H72.34Z"></path></svg>
+    <span class="small lh-sm">Shimla</span>
+  </button>
+  <button class="btn btn-sm bt-capsule-btn hotel-pill flex-shrink-0 d-flex flex-column align-items-center justify-content-center p-2 text-center" style="width: 90px; height: 90px; border-radius: 12px;" data-hotel-filter="ladakh">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256" class="mb-1"><path d="M237.58,181.33,139.66,40.16a16,16,0,0,0-25.32,0L16.42,181.33A16,16,0,0,0,29.08,206H226.92a16,16,0,0,0,12.66-24.67ZM127,56l78.7,112H48.3ZM226.92,190H29.08a.93.93,0,0,1-.79-.5,1,1,0,0,1,.11-1.07l97.92-141.17a.64.64,0,0,1,1.06,0l97.92,141.17a1,1,0,0,1,.11,1.07A.93.93,0,0,1,226.92,190Z"></path></svg>
+    <span class="small lh-sm">Leh Ladakh</span>
+  </button>
+  <button class="btn btn-sm bt-capsule-btn hotel-pill flex-shrink-0 d-flex flex-column align-items-center justify-content-center p-2 text-center" style="width: 95px; height: 90px; border-radius: 12px;" data-hotel-filter="spiti">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256" class="mb-1"><path d="M228.24,195.76l-96-96a8,8,0,0,0-11.32,0l-96,96A8,8,0,0,0,32,208H224a8,8,0,0,0,6.24-12.24ZM45.25,192,128,109.25,210.75,192ZM216,80a8,8,0,0,0-8-8H160V48a8,8,0,0,0-16,0V72H96V48a8,8,0,0,0-16,0V72H48a8,8,0,0,0,0,16H208A8,8,0,0,0,216,80Z"></path></svg>
+    <span class="small lh-sm">Spiti Valley</span>
+  </button>
+</div> -->
+
+  <!-- Card Results Grid -->
+   <div class="row g-4" id="uniqueHotelGrid">
+    <!-- Card 1: The Himalayan Pines Resort & Spa (Manali) -->
+     <div class="col-12 col-md-6 col-lg-4 apple-reveal hb-card-item" data-hb-loc="manali">
+      <div class="card bt-card h-100">
+        <div class="bt-card-img-wrap" style="height: 220px;">
+          <img decoding="async" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80" alt="Himalayan Luxury Resort Manali">
+          <div class="bt-img-scrim"></div>
+          <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-primary">Luxury Stay</span>
+          <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.9 (280)</span>
+          <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+            <span class="small text-warning text-uppercase fw-bold">Manali Valley View</span>
+            <h3 class="h5 fw-bold mb-0 text-white">The Himalayan Pines Resort & Spa</h3>
+          </div>
+        </div>
+        <div class="card-body p-3 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+              <span class="fw-bold text-dark">Location:</span> Prini, Manali (Snow Peak View)<br>
+              <span class="fw-bold text-dark">Amenities:</span> Heated Rooms &bull; Spa &bull; Bonfire
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+            <div>
+              <span class="small text-muted d-block">Starting from</span>
+              <span class="h5 fw-bold text-bt-primary mb-0">₹4,500 <small class="fw-normal text-muted fs-6">/night</small></span>
+            </div>
+            <a href="hotel-himalayan-pines.html" class="btn btn-sm btn-bt-primary px-3">Book Hotel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Wildflower Haven (Shimla) -->
+          <div class="col-12 col-md-6 col-lg-4 apple-reveal hb-card-item" data-hb-loc="shimla">
+      <div class="card bt-card h-100">
+        <div class="bt-card-img-wrap" style="height: 220px;">
+          <img decoding="async" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80" alt="Shimla Heritage Resort">
+          <div class="bt-img-scrim"></div>
+          <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-amber">Heritage Property</span>
+          <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.8 (190)</span>
+          <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+            <span class="small text-warning text-uppercase fw-bold">Pine Forest Ridge</span>
+            <h3 class="h5 fw-bold mb-0 text-white">Wildflower Haven & Heritage Spa</h3>
+          </div>
+        </div>
+        <div class="card-body p-3 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+              <span class="fw-bold text-dark">Location:</span> Mashobra, Shimla<br>
+              <span class="fw-bold text-dark">Amenities:</span> Indoor Pool &bull; Heritage Rooms &bull; Dining
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+            <div>
+              <span class="small text-muted d-block">Starting from</span>
+              <span class="h5 fw-bold text-bt-primary mb-0">₹6,200 <small class="fw-normal text-muted fs-6">/night</small></span>
+            </div>
+            <a href="hotel-wildflower-haven.html" class="btn btn-sm btn-bt-primary px-3">Book Hotel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Pangong Luxury Swiss Camps (Ladakh) -->
+      <div class="col-12 col-md-6 col-lg-4 apple-reveal hb-card-item" data-hb-loc="ladakh">
+      <div class="card bt-card h-100">
+        <div class="bt-card-img-wrap" style="height: 220px;">
+          <img decoding="async" src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=900&q=80" alt="Ladakh Luxury Camps">
+          <div class="bt-img-scrim"></div>
+          <span class="position-absolute top-0 start-0 m-3 bt-badge bt-badge-secondary">Unique Stay</span>
+          <span class="position-absolute top-0 end-0 m-3 badge bg-dark bg-opacity-75 text-warning"><i class="bi bi-star-fill me-1"></i>4.9 (340)</span>
+          <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white">
+            <span class="small text-warning text-uppercase fw-bold">Pangong Lake Shore</span>
+            <h3 class="h5 fw-bold mb-0 text-white">The Zen Ladakh Luxury Camps</h3>
+          </div>
+        </div>
+        <div class="card-body p-3 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-2 rounded bg-bt-surface-low small text-muted mb-3">
+              <span class="fw-bold text-dark">Location:</span> Spangmik, Pangong Lake, Ladakh<br>
+              <span class="fw-bold text-dark">Amenities:</span> Oxygen Cylinders &bull; Heated Tents &bull; Stargazing
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+            <div>
+              <span class="small text-muted d-block">Starting from</span>
+              <span class="h5 fw-bold text-bt-primary mb-0">₹7,500 <small class="fw-normal text-muted fs-6">/night</small></span>
+            </div>
+            <a href="hotel-zen-ladakh.html" class="btn btn-sm btn-bt-primary px-3">Book Hotel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
       <!-- Fleet Showcase -->
       <div class="bg-bt-surface-low py-5">
